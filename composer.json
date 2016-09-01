@@ -1,0 +1,30 @@
+{
+    "name": "stefanfroemken/typo3lexikon",
+    "type": "typo3-cms-extension",
+    "description": "Template for my own site",
+    "version": "1.0.0",
+    "license": "GPL-2.0+",
+    "keywords": ["typo3", "TYPO3 CMS", "typo3lexikon"],
+    "homepage": "http://www.typo3lexikon.de",
+    "authors": [
+      {
+        "name": "Stefan Froemken",
+        "email": "froemken@gmail.com",
+        "role": "Lead Developer"
+      }
+    ],
+    "support": {
+      "email": "froemken@gmail.com",
+      "issues": "https://github.com/froemken/typo3lexikon/issues",
+      "source": "https://github.com/froemken/typo3lexikon"
+    },
+    "require": {
+      "php": ">=5.3.7 <8.0",
+      "typo3/cms-core": ">=6.2.14,<9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "StefanFroemken\\Typo3lexikon\\": "Classes"
+        }
+    }
+}

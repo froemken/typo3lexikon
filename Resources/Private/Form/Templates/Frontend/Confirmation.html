@@ -1,0 +1,8 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+	<div class="alert alert-info" role="alert">
+		<f:format.raw>{message}</f:format.raw>
+	</div>
+	<f:render partial="{model.themeName}/Confirmation/ContainerElements/Form" arguments="{model: model, themeName: model.themeName}" />
+</f:section>

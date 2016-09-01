@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-12-24T20:46:43Z" product-name="typo3lexikon">
+		<body>
+			<trans-unit id="help" approved="yes" xml:space="preserve">
+				<source>
+					It is a good start to write in lower case.
+					If you have a question please use the questionmark (?) at the end.
+					Please try to use full words. Instead of "it's" please use "it is"
+					You can search my website with "search": search extbase root
+					Use "open" to load a page with a given UID: open 123
+					Converter. Currently md5, sha1, crc32, password_hash are supported: convert md5 myValue
+					Ping a host: ping typo3lexikon.de
+					Show command. Currently cookies, timestamp, date, time, datetime are supported: show date
+					You don't like cookies? Call: delete all cookies
+					Start a calculation if you enter integer/float and signs like +-*/(): 1+2-3 *5 /(2*3)
+				</source>
+			</trans-unit>
+			<trans-unit id="how_you" approved="yes" xml:space="preserve">
+				<source>Yeah. I'm fine. Thank you</source>
+			</trans-unit>
+			<trans-unit id="how_old_you" approved="yes" xml:space="preserve">
+				<source>Just a little bit above 30</source>
+			</trans-unit>
+			<trans-unit id="come_from_you" approved="yes" xml:space="preserve">
+				<source>I come from Lindlar. That's here in Germany</source>
+			</trans-unit>
+			<trans-unit id="name_your" approved="yes" xml:space="preserve">
+				<source>My name ist Stefan</source>
+			</trans-unit>
+			<trans-unit id="boss" approved="yes" xml:space="preserve">
+				<source>Boss? I'm the boss of this website</source>
+			</trans-unit>
+			<trans-unit id="boss_your" approved="yes" xml:space="preserve">
+				<source>My boss is Jochen Weiland</source>
+			</trans-unit>
+			<trans-unit id="work_working_you" approved="yes" xml:space="preserve">
+				<source>I'm working at jweiland.net</source>
+			</trans-unit>
+			<trans-unit id="typo" approved="yes" xml:space="preserve">
+				<source>Yeah! A "typo" was the beginning of the new name of TYPO3. Do you want to know a little bit more about that? https://typo3.org/about/the-brand/about-the-name/</source>
+			</trans-unit>
+			<trans-unit id="typo3" approved="yes" xml:space="preserve">
+				<source>TYPO3 is an open source content management system and will be always written in upper case</source>
+			</trans-unit>
+			<trans-unit id="typo3_think_you" approved="yes" xml:space="preserve">
+				<source>I love TYPO3. It's the best CMS I have ever used</source>
+			</trans-unit>
+			<trans-unit id="typo3_download" approved="yes" xml:space="preserve">
+				<source>You can download TYPO3 CMS from here: https://typo3.org/download/ If you have SSH access you can download TYPO3 CMS also by wget or by curl: https://get.typo3.org/</source>
+			</trans-unit>
+			<trans-unit id="typo3_install_composer" approved="yes" xml:space="preserve">
+				<source>You can install TYPO3 CMS with "composer create-project typo3/cms-base-distribution CmsBaseDistribution". But please have a look at http://composer.typo3.org/ for more information</source>
+			</trans-unit>
+			<trans-unit id="typo3_packages_repository_composer" approved="yes" xml:space="preserve">
+				<source>In this repository you will find all TYPO3 packages available for composer integration: https://composer.typo3.org/satis.html</source>
+			</trans-unit>
+			<trans-unit id="templavoila" approved="yes" xml:space="preserve">
+				<source>TemplaVoila seems to be dead. Alexander Schnitzler and Wouter Woulter have updated TemplaVoila for 6.2. But in case of the new Backend API of TYPO3 it seems to be very hard to update TemplaVoila for TYPO3 7 and higher. Please use something else like Fluid Content Elements which has much more acceptance and more performance.</source>
+			</trans-unit>
+			<trans-unit id="documentation_tsref" approved="yes" xml:space="preserve">
+				<source>https://docs.typo3.org/typo3cms/TyposcriptReference/</source>
+			</trans-unit>
+			<trans-unit id="documentation_tsref_page" approved="yes" xml:space="preserve">
+				<source>https://docs.typo3.org/typo3cms/TyposcriptReference/Setup/Page/Index.html</source>
+			</trans-unit>
+			<trans-unit id="documentation_tsref_config" approved="yes" xml:space="preserve">
+				<source>https://docs.typo3.org/typo3cms/TyposcriptReference/Setup/Config/Index.html</source>
+			</trans-unit>
+			<trans-unit id="documentation_tsref_stdwrap" approved="yes" xml:space="preserve">
+				<source>https://docs.typo3.org/typo3cms/TyposcriptReference/Functions/Stdwrap/Index.html</source>
+			</trans-unit>
+			<trans-unit id="documentation_tsref_typolink" approved="yes" xml:space="preserve">
+				<source>https://docs.typo3.org/typo3cms/TyposcriptReference/Functions/Typolink/Index.html</source>
+			</trans-unit>
+			<trans-unit id="documentation_tsref_tsconfig" approved="yes" xml:space="preserve">
+				<source>https://docs.typo3.org/typo3cms/TSconfigReference/</source>
+			</trans-unit>
+			<trans-unit id="documentation_tsref_pagetsconfig" approved="yes" xml:space="preserve">
+				<source>https://docs.typo3.org/typo3cms/TSconfigReference/PageTsconfig/Index.html</source>
+			</trans-unit>
+			<trans-unit id="documentation_tsref_usertsconfig" approved="yes" xml:space="preserve">
+				<source>https://docs.typo3.org/typo3cms/TSconfigReference/UserTsconfig/Index.html</source>
+			</trans-unit>
+			<trans-unit id="joomla_think_you" approved="yes" xml:space="preserve">
+				<source>Joomla is an interesting CMS, but for me it was listed a bit too often on https://www.exploit-db.com</source>
+			</trans-unit>
+			<trans-unit id="wordpress_think_you" approved="yes" xml:space="preserve">
+				<source>A pretty good blog system, but not really a professional CMS like TYPO3</source>
+			</trans-unit>
+			<trans-unit id="mambo_think_you" approved="yes" xml:space="preserve">
+				<source>What? Do you really use that old CMS? It wasn't supported anymore. Switch to a newer one like TYPO3 CMS</source>
+			</trans-unit>
+			<trans-unit id="plone_think_you" approved="yes" xml:space="preserve">
+				<source>Wow. That's pretty a long time ago I have tried to install it. 7 years ago? I remember: After 2 days I have stopped trying to install it and have never touched it again. It wasn't based on PHP, isn't it?</source>
+			</trans-unit>
+			<trans-unit id="opencms_think_you" approved="yes" xml:space="preserve">
+				<source>Available since 2000 and completely written in Java. I'm not a Java professional. I love PHP and I love TYPO3 CMS.</source>
+			</trans-unit>
+			<trans-unit id="papaya_think_you" approved="yes" xml:space="preserve">
+				<source>Papaya? Can I eat this?</source>
+			</trans-unit>
+			<trans-unit id="drupal_think_you" approved="yes" xml:space="preserve">
+				<source>They have cleaned up their API, but they have broken their Backwardscompatibility. So maybe you can build up your extension again.</source>
+			</trans-unit>
+			<trans-unit id="django_think_you" approved="yes" xml:space="preserve">
+				<source>Available since 2007 and programmed on Python.</source>
+			</trans-unit>
+			<trans-unit id="married_you" approved="yes" xml:space="preserve">
+				<source>Yes, I was married since Juli 2009</source>
+			</trans-unit>
+			<trans-unit id="wife_name" approved="yes" xml:space="preserve">
+				<source>The name of my wife is Petra</source>
+			</trans-unit>
+			<trans-unit id="hair_color_you" approved="yes" xml:space="preserve">
+				<source>My hair color is black</source>
+			</trans-unit>
+			<trans-unit id="eye_eyes_color_you" approved="yes" xml:space="preserve">
+				<source>The color of my eyes is green</source>
+			</trans-unit>
+			<trans-unit id="hobby_hobbies_you_your" approved="yes" xml:space="preserve">
+				<source>My hobby is working with TYPO3 CMS and annoying my wife</source>
+			</trans-unit>
+			<trans-unit id="old_petra_wife" approved="yes" xml:space="preserve">
+				<source>Petra is just 2 years younger than me</source>
+			</trans-unit>
+			<trans-unit id="weather" approved="yes" xml:space="preserve">
+				<source>Hmmm...would be a cool feature. Let me check some public APIs for that...</source>
+			</trans-unit>
+			<trans-unit id="why" approved="yes" xml:space="preserve">
+				<source>It's just because of fun. But currently it helps me a lot to reorganize my website. Maybe I will remove that feature in future.</source>
+			</trans-unit>
+			<trans-unit id="where_am_i" approved="yes" xml:space="preserve">
+				<source>Sorry. Don't know. But you can try "show my ip" if it will help you ;-)</source>
+			</trans-unit>
+			<trans-unit id="who_am_i" approved="yes" xml:space="preserve">
+				<source>Sorry. Don't know. But you can try "show my ip" if it will help you ;-)</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
