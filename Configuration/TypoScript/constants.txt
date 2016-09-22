@@ -1,0 +1,10 @@
+styles.content.imgtext.maxWInText = 160
+styles.content.imgtext.linkWrap.width = 800
+styles.content.loginform.pid = 57
+styles.content.imgtext.rowSpace = 15
+styles.content.imgtext.borderThick = 1
+styles.content.textmedia.maxWInText = 180
+styles.content.textmedia.linkWrap.width = 800
+styles.content.textmedia.linkWrap.height = 600
+
+plugin.tx_fscodesnippet.settings.theme = -solarizedlight

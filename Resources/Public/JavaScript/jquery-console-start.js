@@ -1,6 +1,6 @@
 $(function() {
 	var container = $('<div class="console">');
-	$("div.content").append(container);
+	$("div.content").prepend(container);
 	var controller = container.console({
 		promptLabel: 'Chat with 404> ',
 		welcomeMessage: 'Oups error 404 was thrown. Type "help" to get a list of commands which may help you',

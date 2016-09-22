@@ -15,8 +15,6 @@ RTE.default {
     overrideMode = css_transform
     #allowTags = b,i,u,a,img,br,div,center,pre,font,hr,sub,sup,p,strong,em,li,ul,ol,blockquote,strike,span
     denyTags = img,center,font,hr,sub,sup,ol,strike
-    #dontUndoHSC_db = 1
-    #dontHSC_rte = 1
     dontConvBRtoParagraph = 1
     exitHTMLparser_db = 1
     exitHTMLparser_db {
@@ -28,7 +26,6 @@ RTE.default {
         }
         strong {
           allowedAttribs = 0
-          remap = strong
         }
         i {
           allowedAttribs = 0
@@ -62,6 +59,18 @@ RTE.default {
     exitHTMLparser_rte = 1
     exitHTMLparser_rte {
       allowTags = p,strong,em,u,h2,h3,pre,ul,li,a,br,span
+      tags {
+        # TYPO3 Transformation maps strong to b. I map it back to strong
+        b {
+          allowedAttribs = 0
+          remap = strong
+        }
+        # TYPO3 Transformation maps em to i. I map it back to em
+        i {
+          allowedAttribs = 0
+          remap = em
+        }
+      }
     }
   }
 }

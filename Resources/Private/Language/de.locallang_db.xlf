@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-09-20T20:25:40Z" product-name="typo3lexikon">
+		<header/>
+		<body>
+
+			<trans-unit id="tx_typo3lexikon_answer">
+				<source>Answers</source>
+				<target>Antworten</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3lexikon_answer.question_key">
+				<source>Question Key</source>
+				<target>Frageschlüssel</target>
+			</trans-unit>
+			<trans-unit id="tx_typo3lexikon_answer.value">
+				<source>Answer</source>
+				<target>Antwort</target>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

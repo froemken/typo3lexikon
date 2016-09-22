@@ -89,7 +89,7 @@ class ExecuteCommands
         } elseif ($lowerCasedCommand === 'server') {
             $output = DebugUtility::viewArray($_SERVER);
         } elseif ($lowerCasedCommand === 'my ip') {
-            $output = DebugUtility::viewArray($_SERVER['REMOTE_ADDR']);
+            $output = $_SERVER['REMOTE_ADDR'];
         } elseif ($lowerCasedCommand === 'post') {
             $output = DebugUtility::viewArray($_POST);
         } elseif ($lowerCasedCommand === 'get') {

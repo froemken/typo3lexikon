@@ -10,6 +10,8 @@ page.includeCSS {
   bootstrap = EXT:typo3lexikon/Resources/Public/css/bootstrap.min.css
   prism = EXT:typo3lexikon/Resources/Public/css/prism.css
   main = EXT:typo3lexikon/Resources/Public/css/main.css
+  fsCodeSnippetMainLineNUmbers >
+  fsCodeSnippetMain = EXT:typo3lexikon/Resources/Public/css/prism-typo3lexikon.css
 }
 
 page.10 = FLUIDTEMPLATE
