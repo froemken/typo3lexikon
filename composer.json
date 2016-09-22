@@ -2,7 +2,7 @@
     "name": "stefanfroemken/typo3lexikon",
     "type": "typo3-cms-extension",
     "description": "Template for my own site",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "GPL-2.0+",
     "keywords": ["typo3", "TYPO3 CMS", "typo3lexikon"],
     "homepage": "http://www.typo3lexikon.de",
