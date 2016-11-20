@@ -20,7 +20,7 @@ config {
 
 	# RealURL
 	simulateStaticDocuments = 0
-	baseURL = auto
+	absRefPrefix = auto
 	tx_realurl_enable = 1
 
 	# Localization
@@ -33,4 +33,3 @@ config {
 	spamProtectEmailAddresses = -5
 	notification_email_urlmode = 76
 }
-
