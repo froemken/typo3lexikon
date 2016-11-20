@@ -20,7 +20,7 @@ config {
 
 	# RealURL
 	simulateStaticDocuments = 0
-	baseURL = http://www.typo3lexikon.de/
+	baseURL = auto
 	tx_realurl_enable = 1
 
 	# Localization

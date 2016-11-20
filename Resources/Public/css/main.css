@@ -50,7 +50,7 @@ div#search {
   background-color: #e46611;
 }
 
-.list-group-item {
+div#mainNavigation .list-group-item {
   background-color: #eee;
 }
 
