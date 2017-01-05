@@ -13,13 +13,13 @@ $(function() {
 		commandHandle: function(line, handle) {
 			$.ajax({
 				type: "POST",
-				url: "http://www.typo3lexikon.de/?eID=typo3lexikon_console",
+				url: "https://www.typo3lexikon.de/?eID=typo3lexikon_console",
 				dataType: "text",
 				data: {
 					line: line
 				}
 			}).done(function(answer) {
-				if (answer.substring(0, 4) == "http") {
+				if (answer.substring(0, 5) == "https") {
 					window.location.href = answer;
 				} else {
 					handle([{

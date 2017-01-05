@@ -191,12 +191,12 @@ class Console
             if (empty($page)) {
                 $output = 'Sorry, I don\'t know this page';
             } else {
-                $output = 'http://www.typo3lexikon.de/index.php?id=' . (int)$page['uid'];
+                $output = 'https://www.typo3lexikon.de/index.php?id=' . (int)$page['uid'];
             }
         } else {
             $urlParts = parse_url($input);
             if (!$urlParts['scheme']) {
-                $urlParts['scheme'] = 'http';
+                $urlParts['scheme'] = 'https';
             }
             $output = HttpUtility::buildUrl($urlParts);
         }
