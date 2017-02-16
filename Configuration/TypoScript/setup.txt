@@ -7,4 +7,8 @@
 <INCLUDE_TYPOSCRIPT: source="FILE:./Setup/solr.ts">
 
 lib.content < styles.content.get
+lib.fluidContent.partialRootPaths.1450878401 >
 lib.fluidContent.partialRootPaths.10 = EXT:typo3lexikon/Resources/Private/Fsc/Partials/
+lib.fluidContent.templateRootPaths.1450878401 >
+lib.fluidContent.templateRootPaths.10 = EXT:typo3lexikon/Resources/Private/Fsc/Templates/
+lib.fluidContent.layoutRootPaths.1450878401 >
