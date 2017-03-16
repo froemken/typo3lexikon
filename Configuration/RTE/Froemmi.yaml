@@ -1,0 +1,59 @@
+# Add Froemmi specified configuration
+# For complete documentation see http://docs.ckeditor.com/#!/api/CKEDITOR.config
+editor:
+  config:
+    # the CSS file to be used inside the editor
+    contentsCss: "EXT:typo3lexikon/Resources/Public/Css/rte.css"
+    # will be overridden by the record (if a language is set)
+    defaultContentLanguage: "en"
+    height: 300
+    width: "auto"
+    title: "My fucking first instance of CK Editor"
+    uiColor: "#449988"
+    tabSpaces: 4
+
+    skin: "moono-lisa"
+    entities: false
+
+    stylesSet:
+      - { name: "Text: primary", element: "span", attributes: { class: "text-primary" } }
+      - { name: "Text: success", element: "span", attributes: { class: "text-success" } }
+      - { name: "Text: info", element: "span", attributes: { class: "text-info" } }
+      - { name: "Text: warning", element: "span", attributes: { class: "text-warning" } }
+      - { name: "Text: danger", element: "span", attributes: { class: "text-danger" } }
+
+      - { name: "Background: primary", element: "p", attributes: { class: "bg-primary" } }
+      - { name: "Background: success", element: "p", attributes: { class: "bg-success" } }
+      - { name: "Background: info", element: "p", attributes: { class: "bg-info" } }
+      - { name: "Background: warning", element: "p", attributes: { class: "bg-warning" } }
+      - { name: "Background: danger", element: "p", attributes: { class: "bg-danger" } }
+    toolbarGroups:
+      - { name: "document", groups: [ "mode", "document", "doctools" ] }
+      - { name: "clipboard", groups: [ "clipboard", "undo" ] }
+      - { name: "editing", groups: [ "find", "selection", "spellchecker", "editing" ] }
+      - { name: "forms", groups: [ "forms" ] }
+      - { name: "basicstyles", groups: [ "basicstyles", "cleanup" ] }
+      - { name: "paragraph", groups: [ "list", "indent", "blocks", "align", "bidi", "paragraph" ] }
+      - { name: "links", groups: [ "links" ] }
+      - { name: "insert", groups: [ "insert" ] }
+      - "/"
+      - { name: "styles", groups: [ "styles" ] }
+      - { name: "colors", groups: [ "colors" ] }
+      - { name: "tools", groups: [ "tools" ] }
+      - { name: "others", groups: [ "others" ] }
+      - { name: "about", groups: [ "about" ] }
+    removeButtons: "Save,NewPage,Preview,Print,Templates,Undo,Redo,Find,Replace,SelectAll,Scayt,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,Subscript,Superscript,CopyFormatting,Strike,Outdent,Indent,JustifyBlock,BidiLtr,BidiRtl,Language,Flash,HorizontalRule,Smiley,SpecialChar,PageBreak,Iframe,TextColor,BGColor,ShowBlocks,Maximize,About"
+    format_tags: "p;h2;h3;h4;pre"
+    format_h1: { element: "h1", attributes: { style: "color: navy;" } }
+    format_h2: { element: "h2", attributes: { style: "color: green;" } }
+    fontSize_sizes: "12 Pixel/12px;14 Pixel/14px;16 Pixel/16px;"
+    font_defaultLabel: "Arial"
+    forcePasteAsPlainText: true
+    justifyClasses:
+      - align-left
+      - align-center
+      - align-right
+      - align-justify
+    extraPlugins:
+      - font
+      - justify

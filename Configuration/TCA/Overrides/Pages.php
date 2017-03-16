@@ -12,8 +12,8 @@ call_user_func(
         // Add pageTSconfig for RTE configuration
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
             $extKey,
-            'Configuration/PageTSconfig/TinyMCE.ts',
-            'TinyMCE configuration'
+            'Configuration/PageTSconfig/CKEditor.ts',
+            'CKEditor configuration'
         );
     },
     'typo3lexikon'
