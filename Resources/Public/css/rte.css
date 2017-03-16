@@ -11,8 +11,8 @@
 body
 {
   /* Font */
-  font-family: sans-serif, Arial, Verdana, "Trebuchet MS";
-  font-size: 12px;
+  font-family: "Trebuchet MS", Verdana, Arial, sans-serif;
+  font-size: 14px;
 
   /* Text color */
   color: #333;
@@ -25,7 +25,7 @@ body
 
 .cke_editable
 {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.6;
 
   /* Fix for missing scrollbars with RTL texts. (#10488) */
@@ -69,15 +69,25 @@ ol,ul,dl
   padding: 0 40px;
 }
 
-h1,h2,h3,h4,h5,h6
+h2, h3, h4
 {
   font-weight: normal;
   line-height: 1.2;
 }
 
+h2, .h2 {
+  color: #333333;
+  font-size: 18px;
+}
+
+h3, .h3,
+h4, .h4 {
+  color: #748C9A;
+}
+
 hr
 {
-  border: 0px;
+  border: 0;
   border-top: 1px solid #ccc;
 }
 

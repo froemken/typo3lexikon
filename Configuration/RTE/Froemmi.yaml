@@ -3,7 +3,7 @@
 editor:
   config:
     # the CSS file to be used inside the editor
-    contentsCss: "EXT:typo3lexikon/Resources/Public/Css/rte.css"
+    contentsCss: "EXT:typo3lexikon/Resources/Public/css/rte.css"
     # will be overridden by the record (if a language is set)
     defaultContentLanguage: "en"
     height: 300
@@ -44,8 +44,6 @@ editor:
       - { name: "about", groups: [ "about" ] }
     removeButtons: "Save,NewPage,Preview,Print,Templates,Undo,Redo,Find,Replace,SelectAll,Scayt,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,Subscript,Superscript,CopyFormatting,Strike,Outdent,Indent,JustifyBlock,BidiLtr,BidiRtl,Language,Flash,HorizontalRule,Smiley,SpecialChar,PageBreak,Iframe,TextColor,BGColor,ShowBlocks,Maximize,About"
     format_tags: "p;h2;h3;h4;pre"
-    format_h1: { element: "h1", attributes: { style: "color: navy;" } }
-    format_h2: { element: "h2", attributes: { style: "color: green;" } }
     fontSize_sizes: "12 Pixel/12px;14 Pixel/14px;16 Pixel/16px;"
     font_defaultLabel: "Arial"
     forcePasteAsPlainText: true
