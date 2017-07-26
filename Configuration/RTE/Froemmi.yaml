@@ -12,7 +12,7 @@ editor:
     uiColor: "#449988"
     tabSpaces: 4
 
-    skin: "moono-lisa"
+    #skin: "moono-lisa"
     entities: false
 
     stylesSet:

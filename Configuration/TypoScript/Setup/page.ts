@@ -1,7 +1,8 @@
 page = PAGE
 page.typeNum = 0
-page.includeJSLibs {
-  jQuery = EXT:typo3lexikon/Resources/Public/JavaScript/jquery-2.1.4.min.js
+page.includeJSFooter {
+  jQuery = https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js
+  jQuery.external = 1
   jQuery.forceOnTop = 1
   bootstrap = EXT:typo3lexikon/Resources/Public/JavaScript/bootstrap.min.js
   main = EXT:typo3lexikon/Resources/Public/JavaScript/main.js

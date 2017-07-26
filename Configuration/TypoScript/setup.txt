@@ -12,3 +12,6 @@ lib.fluidContent.partialRootPaths.10 = EXT:typo3lexikon/Resources/Private/Fsc/Pa
 lib.fluidContent.templateRootPaths.1450878401 >
 lib.fluidContent.templateRootPaths.10 = EXT:typo3lexikon/Resources/Private/Fsc/Templates/
 lib.fluidContent.layoutRootPaths.1450878401 >
+
+# remove empty <p>-Tags in Frontend since CKEditor switch
+lib.parseFunc_RTE.nonTypoTagStdWrap.encapsLines.innerStdWrap_all >
