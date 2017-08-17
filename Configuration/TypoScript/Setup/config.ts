@@ -32,4 +32,7 @@ config {
 	# Spam Protection
 	spamProtectEmailAddresses = -5
 	notification_email_urlmode = 76
+
+  # Enable search by Solr
+  index_enable = 1
 }

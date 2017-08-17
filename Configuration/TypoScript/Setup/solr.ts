@@ -1,3 +1,4 @@
-plugin.tx_solr.solr.host = 8928:pi-zish-why-to-jyr@176.221.42.109
-plugin.tx_solr.solr.port = 10080
-plugin.tx_solr.solr.path = /solr/core_8928_german/
+plugin.tx_solr.templateFiles.results = EXT:typo3lexikon/Resources/Private/Solr/Results.html
+plugin.tx_solr.templateFiles.pagebrowser = EXT:typo3lexikon/Resources/Private/Solr/PageBrowser.html
+plugin.tx_solr.search.results.resultsHighlighting = 1
+plugin.tx_solr.cssFiles.results >

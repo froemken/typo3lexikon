@@ -1,17 +1,32 @@
 <INCLUDE_TYPOSCRIPT: source="FILE:./Setup/config.ts">
-<INCLUDE_TYPOSCRIPT: source="FILE:./Library/leftNavigation.ts">
 <INCLUDE_TYPOSCRIPT: source="FILE:./Library/breadcrumb.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:./Library/leftNavigation.ts">
 <INCLUDE_TYPOSCRIPT: source="FILE:./Library/mainNavigation.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:./Library/searchWord.ts">
 <INCLUDE_TYPOSCRIPT: source="FILE:./Setup/page.ts">
 <INCLUDE_TYPOSCRIPT: source="FILE:./Setup/page.meta.ts">
 <INCLUDE_TYPOSCRIPT: source="FILE:./Setup/solr.ts">
 
 lib.content < styles.content.get
+# do not cache search plugin incl. page title
+[page|uid = 277]
+  lib.content >
+  lib.content = COA_INT
+  lib.content.10 < styles.content.get
+[end]
+
 lib.fluidContent.partialRootPaths.1450878401 >
 lib.fluidContent.partialRootPaths.10 = EXT:typo3lexikon/Resources/Private/Fsc/Partials/
 lib.fluidContent.templateRootPaths.1450878401 >
 lib.fluidContent.templateRootPaths.10 = EXT:typo3lexikon/Resources/Private/Fsc/Templates/
 lib.fluidContent.layoutRootPaths.1450878401 >
+
+tt_content.list {
+  dataProcessing {
+    10 = StefanFroemken\Typo3lexikon\Frontend\DataProcessing\ChangeSearchHeaderProcessor
+  }
+}
+
 
 # remove empty <p>-Tags in Frontend since CKEditor switch
 lib.parseFunc_RTE.nonTypoTagStdWrap.encapsLines.innerStdWrap_all >

@@ -20,7 +20,7 @@ use TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController;
 /**
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  */
-class HeaderProcessor implements DataProcessorInterface
+class ChangeSearchHeaderProcessor implements DataProcessorInterface
 {
     /**
      * Process content object data
@@ -37,27 +37,11 @@ class HeaderProcessor implements DataProcessorInterface
         array $processorConfiguration,
         array $processedData
     ) {
-        if (empty($this->getTypoScriptFrontendController()->register['currentIndexForHeader'])) {
-            $this->getTypoScriptFrontendController()->register['currentIndexForHeader'] = 1;
-        }
-        // don't create header numbers for first element
-        if ($cObj->parentRecordNumber !== 1) {
-            if (!empty($processedData['data']['header'])) {
-                $currentIndex = $this->getTypoScriptFrontendController()->register['currentIndexForHeader'];
-                $processedData['data']['header'] = $currentIndex . '. ' . $processedData['data']['header'];
-                $this->getTypoScriptFrontendController()->register['currentIndexForHeader'] += 1;
-            }
+        // Add search word to header
+        if ($processedData['data']['list_type'] === 'solr_pi_results') {
+            $searchWord = htmlspecialchars($_GET['q']);
+            $processedData['data']['header'] .= ' für "' . $searchWord . '"';
         }
         return $processedData;
-    }
-
-    /**
-     * get TypoScriptFrontendController
-     *
-     * @return TypoScriptFrontendController
-     */
-    protected function getTypoScriptFrontendController()
-    {
-        return $GLOBALS['TSFE'];
     }
 }
