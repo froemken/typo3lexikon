@@ -4,6 +4,8 @@ editor:
   config:
     # the CSS file to be used inside the editor
     contentsCss: "EXT:typo3lexikon/Resources/Public/css/rte.css"
+    # Load custom configuration file
+    customConfig: "EXT:typo3lexikon/Resources/Public/JavaScript/CustomCkEditor.js"
     # will be overridden by the record (if a language is set)
     defaultContentLanguage: "en"
     height: 300
@@ -27,6 +29,28 @@ editor:
       - { name: "Background: info", element: "p", attributes: { class: "bg-info" } }
       - { name: "Background: warning", element: "p", attributes: { class: "bg-warning" } }
       - { name: "Background: danger", element: "p", attributes: { class: "bg-danger" } }
+
+      - { name: "Table: striped", element: "table", attributes: { class: "table table-striped" } }
+      - { name: "Table: bordered", element: "table", attributes: { class: "table table-bordered" } }
+      - { name: "Table: striped/bordered", element: "table", attributes: { class: "table table-striped table-bordered" } }
+
+      - { name: "Table Row: active", element: "tr", attributes: { class: "active" } }
+      - { name: "Table Row: success", element: "tr", attributes: { class: "success" } }
+      - { name: "Table Row: warning", element: "tr", attributes: { class: "warning" } }
+      - { name: "Table Row: danger", element: "tr", attributes: { class: "danger" } }
+      - { name: "Table Row: info", element: "tr", attributes: { class: "info" } }
+
+      - { name: "Table Header: active", element: "th", attributes: { class: "active" } }
+      - { name: "Table Header: success", element: "th", attributes: { class: "success" } }
+      - { name: "Table Header: warning", element: "th", attributes: { class: "warning" } }
+      - { name: "Table Header: danger", element: "th", attributes: { class: "danger" } }
+      - { name: "Table Header: info", element: "th", attributes: { class: "info" } }
+
+      - { name: "Table Field: active", element: "td", attributes: { class: "active" } }
+      - { name: "Table Field: success", element: "td", attributes: { class: "success" } }
+      - { name: "Table Field: warning", element: "td", attributes: { class: "warning" } }
+      - { name: "Table Field: danger", element: "td", attributes: { class: "danger" } }
+      - { name: "Table Field: info", element: "td", attributes: { class: "info" } }
     toolbarGroups:
       - { name: "document", groups: [ "mode", "document", "doctools" ] }
       - { name: "clipboard", groups: [ "clipboard", "undo" ] }
@@ -55,3 +79,4 @@ editor:
     extraPlugins:
       - font
       - justify
+      - devtools
