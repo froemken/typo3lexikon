@@ -28,6 +28,7 @@
     <f:if condition="{default}">
       <f:render partial="Header/Header" arguments="{
         header: header,
+        subheader: subheader,
         layout: default,
         link: link}" />
     </f:if>
@@ -38,7 +39,7 @@
 <f:section name="renderHeader">
   <f:link.typolink parameter="{link}">
     {header}
-    <f:if condition="subheader">
+    <f:if condition="{subheader}">
       <f:then><small>{subheader}</small></f:then>
     </f:if>
   </f:link.typolink>
