@@ -19,8 +19,8 @@
       "source": "https://github.com/froemken/typo3lexikon"
     },
     "require": {
-      "php": ">=7.* <8.0",
-      "typo3/cms-core": ">=7.6.* <9.0"
+      "php": "^7.0",
+      "typo3/cms-core": ">=7.6"
     },
     "autoload": {
         "psr-4": {
