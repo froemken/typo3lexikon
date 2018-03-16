@@ -1,6 +1,11 @@
 # Add Froemmi specified configuration
 # For complete documentation see http://docs.ckeditor.com/#!/api/CKEDITOR.config
 editor:
+  externalPlugins:
+    typo3link: { resource: "EXT:rte_ckeditor/Resources/Public/JavaScript/Plugins/typo3link.js", route: "rteckeditor_wizard_browse_links" }
+    # This is a plugin, found here: https://github.com/ufdada/quicktable
+    quicktable: { resource: "EXT:rte_ckeditor/Resources/Public/JavaScript/Plugins/quicktable/plugin.js" }
+    autolinking: { resource: "EXT:rte_ckeditor/Resources/Public/JavaScript/Plugins/autolinking.js" }
   config:
     # the CSS file to be used inside the editor
     contentsCss: "EXT:typo3lexikon/Resources/Public/css/rte.css"
@@ -67,6 +72,7 @@ editor:
       - { name: "others", groups: [ "others" ] }
       - { name: "about", groups: [ "about" ] }
     removeButtons: "Save,NewPage,Preview,Print,Templates,Undo,Redo,Find,Replace,SelectAll,Scayt,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,Subscript,Superscript,CopyFormatting,Strike,Outdent,Indent,JustifyBlock,BidiLtr,BidiRtl,Language,Flash,HorizontalRule,Smiley,SpecialChar,PageBreak,Iframe,TextColor,BGColor,ShowBlocks,Maximize,About"
+    removeDialogTabs: "image:advanced;link:advanced"
     format_tags: "p;h2;h3;h4;pre"
     fontSize_sizes: "12 Pixel/12px;14 Pixel/14px;16 Pixel/16px;"
     font_defaultLabel: "Arial"
