@@ -3,7 +3,7 @@ return array(
     'ctrl' => array(
         'title' => 'LLL:EXT:typo3lexikon/Resources/Private/Language/locallang_db.xlf:tx_typo3lexikon_answer',
         'label' => 'question_key',
-        'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('typo3lexikon') . 'Resources/Public/Icons/tx_typo3lexikon_answer.gif',
+        'iconfile' => 'EXT:typo3lexikon/Resources/Public/Icons/tx_typo3lexikon_answer.gif',
     ),
     'interface' => array(
         'showRecordFieldList' => 'question_key, value',

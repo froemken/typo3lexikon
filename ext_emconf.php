@@ -22,14 +22,13 @@ $EM_CONF[$_EXTKEY] = array(
     'createDirs' => '',
     'clearCacheOnLoad' => 0,
     'version' => '1.0.3',
-    'constraints' => array(
-        'depends' => array(
-            'typo3' => '6.2.0-8.99.99',
-            'fs_code_snippet' => '1.8.*'
-        ),
-        'conflicts' => array(
-        ),
-        'suggests' => array(
-        ),
-    ),
+    'constraints' => [
+        'depends' => [
+            'typo3' => '9.5.0-9.5.99'
+        ],
+        'conflicts' => [
+        ],
+        'suggests' => [
+        ],
+    ],
 );

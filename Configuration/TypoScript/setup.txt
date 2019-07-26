@@ -1,11 +1,11 @@
-<INCLUDE_TYPOSCRIPT: source="FILE:./Setup/config.ts">
-<INCLUDE_TYPOSCRIPT: source="FILE:./Library/breadcrumb.ts">
-<INCLUDE_TYPOSCRIPT: source="FILE:./Library/leftNavigation.ts">
-<INCLUDE_TYPOSCRIPT: source="FILE:./Library/mainNavigation.ts">
-<INCLUDE_TYPOSCRIPT: source="FILE:./Library/searchWord.ts">
-<INCLUDE_TYPOSCRIPT: source="FILE:./Setup/page.ts">
-<INCLUDE_TYPOSCRIPT: source="FILE:./Setup/page.meta.ts">
-<INCLUDE_TYPOSCRIPT: source="FILE:./Setup/solr.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:./Setup/config.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:./Library/breadcrumb.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:./Library/leftNavigation.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:./Library/mainNavigation.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:./Library/searchWord.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:./Setup/page.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:./Setup/page.meta.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:./Setup/solr.typoscript">
 
 lib.content < styles.content.get
 # do not cache search plugin incl. page title

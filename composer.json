@@ -2,8 +2,7 @@
     "name": "stefanfroemken/typo3lexikon",
     "type": "typo3-cms-extension",
     "description": "Template for my own site",
-    "version": "1.0.3",
-    "license": "GPL-2.0+",
+    "license": "GPL-2.0-or-later",
     "keywords": ["typo3", "TYPO3 CMS", "typo3lexikon"],
     "homepage": "https://www.typo3lexikon.de",
     "authors": [
@@ -19,9 +18,7 @@
       "source": "https://github.com/froemken/typo3lexikon"
     },
     "require": {
-      "php": "^7.0",
-      "typo3/cms-core": ">=7.6",
-      "danielgoerz/fs-code-snippet": "^1.8"
+      "typo3/cms-core": "^9.5"
     },
     "autoload": {
         "psr-4": {

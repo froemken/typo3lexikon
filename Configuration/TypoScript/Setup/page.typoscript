@@ -1,19 +1,19 @@
 page = PAGE
 page.typeNum = 0
+page.bodyTag = <body class="line-numbers">
 
 page.includeJSFooter {
-  jQuery = https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js
-  jQuery.external = 1
+  jQuery = EXT:typo3lexikon/Resources/Public/JavaScript/jquery-3.4.1.min.js
   jQuery.forceOnTop = 1
-  bootstrap = EXT:typo3lexikon/Resources/Public/JavaScript/bootstrap.min.js
+  #bootstrap = EXT:typo3lexikon/Resources/Public/JavaScript/bootstrap.min.js
+  prism = EXT:typo3lexikon/Resources/Public/JavaScript/prism.min.js
   main = EXT:typo3lexikon/Resources/Public/JavaScript/main.js
 }
 
 page.includeCSS {
   bootstrap = EXT:typo3lexikon/Resources/Public/css/bootstrap.min.css
+  prism = EXT:typo3lexikon/Resources/Public/css/prism-typo3lexikon.css
   main = EXT:typo3lexikon/Resources/Public/css/main.css
-  fsCodeSnippetMainLineNUmbers >
-  fsCodeSnippetMain = EXT:typo3lexikon/Resources/Public/css/prism-typo3lexikon.css
 }
 
 page.10 = FLUIDTEMPLATE

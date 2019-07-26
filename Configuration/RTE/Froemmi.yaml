@@ -68,7 +68,7 @@ editor:
       - "/"
       - { name: "styles", groups: [ "styles" ] }
       - { name: "colors", groups: [ "colors" ] }
-      - { name: "tools", groups: [ "tools" ] }
+      - { name: "tools", groups: [ "tools", "CodeSnippet" ] }
       - { name: "others", groups: [ "others" ] }
       - { name: "about", groups: [ "about" ] }
     removeButtons: "Save,NewPage,Preview,Print,Templates,Undo,Redo,Find,Replace,SelectAll,Scayt,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,Subscript,Superscript,CopyFormatting,Strike,Outdent,Indent,JustifyBlock,BidiLtr,BidiRtl,Language,Flash,HorizontalRule,Smiley,SpecialChar,PageBreak,Iframe,TextColor,BGColor,ShowBlocks,Maximize,About"
@@ -86,3 +86,15 @@ editor:
       - font
       - justify
       - devtools
+      - codesnippet
+    codeSnippet_theme: 'foundation'
+    # Don't know how to implement: template: '<pre class="line-numbers"><code class="' + codeClass + '"></code></pre>'
+    codeSnippet_languages:
+      bash: 'Bash'
+      css: 'CSS'
+      html: 'HTML'
+      json: 'JSON'
+      javascript: 'JavaScript'
+      php: 'PHP'
+      typoscript: 'TypoScript'
+      yaml: 'Yaml'

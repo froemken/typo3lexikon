@@ -1,6 +1,6 @@
 config {
 	# Deactivate Exception Handler to show something other than only: Oops an Error occurred
-	contentObjectExceptionHandler = 0
+	contentObjectExceptionHandler = 1
 
 	# html5 is the default
 	doctype = html5
@@ -16,12 +16,11 @@ config {
 	sendCacheHeaders = 1
 
 	# do not clear cache each day. Clear cache only each month
-	cache_period = 2592000
+	cache_period = 604800
 
 	# RealURL
 	simulateStaticDocuments = 0
 	absRefPrefix = auto
-	tx_realurl_enable = 1
 
 	# Localization
 	language = de
@@ -33,6 +32,6 @@ config {
 	spamProtectEmailAddresses = -5
 	notification_email_urlmode = 76
 
-  # Enable search by Solr
-  index_enable = 1
+	# Enable search by Solr
+	index_enable = 1
 }
