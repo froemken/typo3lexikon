@@ -1,176 +1,36 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <title>Template for the search results view for EXT:solr</title>
-</head>
-<body>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:s="http://typo3.org/ns/ApacheSolrForTypo3/Solr/ViewHelpers/">
 
-<!-- ###SOLR_SEARCH### begin -->
 <nav id="tx-solr-search">
-  <!-- ###SOLR_SEARCH_ERRORS### begin -->
-  <div class="tx-solr-search-form-errors">
-    ###LLL:error_errors###
-    <!-- ###LOOP:ERRORS### begin -->
-    <ul class="tx-solr-search-form-error-list">
-      <!-- ###LOOP_CONTENT### -->
-      <li>###ERROR.MESSAGE###</li>
-      <!-- ###LOOP_CONTENT### -->
-    </ul>
-    <!-- ###LOOP:ERRORS### end -->
-  </div>
-  <!-- ###SOLR_SEARCH_ERRORS### end -->
+	<div class="row">
+		<div class="col-md-12">
+			<f:if condition="{resultSet.hasSearched}">
+				<s:widget.resultPaginate resultSet="{resultSet}">
+					<div data-start="{pagination.resultCountStart}" class="results-list list-group">
+						<f:for each="{documents}" as="document">
+							<f:render section="Document" arguments="{resultSet:resultSet, document:document}" />
+						</f:for>
+					</div>
+				</s:widget.resultPaginate>
+			</f:if>
+		</div>
+	</div>
+</nav>
 
-  <!-- ###SOLR_SEARCH_RESULTS### begin -->
-  ###RESULTS.RANGE###
+<f:section name="Document">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title"><a href="{s:uri.result.addSearchWordList(url:document.url, searchWords:resultSet.usedQuery.query)}">{document.title}</a></h3>
+		</div>
 
-  <nav aria-label="Page navigation">###RESULTS.PAGEBROWSER###</nav>
+		<div class="panel-body">
+			{s:document.highlightResult(resultSet:resultSet, document:document, fieldName:'content')}
+		</div>
+	</div>
+</f:section>
 
-  <!-- ###LOOP:RESULT_DOCUMENTS### begin -->
-  <!-- ###LOOP_CONTENT### -->
-  <!-- ###IF:###RESULT_DOCUMENT.isElevated###|==|1|class1### end -->
-  <div class="panel panel-info">
-  <!-- ###IF:###RESULT_DOCUMENT.isElevated###|==|1|class1### end -->
-  <!-- ###IF:###RESULT_DOCUMENT.isElevated###|==||class2### end -->
-  <div class="panel panel-default">
-  <!-- ###IF:###RESULT_DOCUMENT.isElevated###|==||class2### end -->
-    <div class="panel-heading">
-      <h3 class="panel-title"><a href="###RESULT_DOCUMENT.URL###">###RESULT_DOCUMENT.TITLE###</a></h3>
-    </div>
-    <div class="panel-body">###RESULT_DOCUMENT.CONTENT###</div>
-  </div>
-  <!-- ###LOOP_CONTENT### -->
-  <!-- ###LOOP:RESULT_DOCUMENTS### end -->
-  ###RESULTS.PAGEBROWSER###
-  <!-- ###SOLR_SEARCH_RESULTS### end -->
 
-  <!-- ###SOLR_SEARCH_NO_RESULTS### begin -->
-  <div class="tx-solr-search-no-results">
-    ###NO_RESULTS.NOTHING_FOUND###
-    <!-- ###IF:###NO_RESULTS.HAS_SUGGESTION_RESULTS###|!=|1### begin -->
-    ###NO_RESULTS.SUGGESTION###
-    <!-- ###IF:###NO_RESULTS.HAS_SUGGESTION_RESULTS###|!=|1### end -->
-  </div>
-
-  <div class="tx-solr-search-suggestion_results">
-    <!-- ###IF:###NO_RESULTS.HAS_SUGGESTION_RESULTS###|==|1### begin -->
-    ###NO_RESULTS.SUGGESTION_RESULTS###
-    <!-- ###IF:###NO_RESULTS.HAS_SUGGESTION_RESULTS###|==|1### end -->
-  </div>
-  <!-- ###SOLR_SEARCH_NO_RESULTS### end -->
-</div>
-
-<div id="tx-solr-search-functions">
-  <!-- ###SOLR_SEARCH_SORTING### begin -->
-  <div id="tx-solr-sorting" class="secondaryContentSection">
-    <div class="csc-header">
-      <h3 class="csc-firstHeader">###LLL:sorting_sortBy###</h3>
-    </div>
-    <ul>
-      <!-- ###LOOP:SORT### begin -->
-      <!-- ###LOOP_CONTENT### -->
-      <li>
-        ###SORT_INDICATOR:###SORT.CURRENT_DIRECTION###### ###SORT.LINK###
-      </li>
-      <!-- ###LOOP_CONTENT### -->
-      <!-- ###LOOP:SORT### end -->
-    </ul>
-  </div>
-  <!-- ###SOLR_SEARCH_SORTING### end -->
-
-  <!-- ###SOLR_SEARCH_FACETING### begin -->
-  <div id="tx-solr-faceting">
-    <!-- ###USED_FACETS### begin -->
-    <div id="tx-solr-facets-in-use" class="secondaryContentSection">
-      <div class="csc-header">
-        <h3 class="csc-firstHeader">###LLL:faceting_resultsNarrowedBy###</h3>
-      </div>
-      <ul>
-        <!-- ###LOOP:FACETS_IN_USE### begin -->
-        <!-- ###LOOP_CONTENT### -->
-        <li>
-          - <a href="###REMOVE_FACET.url###">###REMOVE_FACET.text###</a>
-        </li>
-        <!-- ###LOOP_CONTENT### -->
-        <!-- ###LOOP:FACETS_IN_USE### end -->
-
-        <li class="facets-remove-all">
-          <a href="###REMOVE_ALL_FACETS.url###">###REMOVE_ALL_FACETS.text###</a>
-        </li>
-      </ul>
-    </div>
-    <!-- ###USED_FACETS### end -->
-
-    <!-- ###AVAILABLE_FACETS### begin -->
-    <div id="tx-solr-facets-available" class="secondaryContentSection">
-      <div class="csc-header">
-        <h3 class="csc-firstHeader">###LLL:faceting_narrowSearch###</h3>
-      </div>
-      <ul class="facets">
-        <!-- ###SINGLE_FACET### begin -->
-        <li class="facet facet-###FACET.name### facet-type-###FACET.type###">
-          <h5 class="facet-label csc-header">###FACET.label###</h5>
-          <ul class="facet-option-list">
-            <!-- ###SINGLE_FACET_OPTION### begin -->
-            <!-- ###LOOP:FACET_LINKS### begin -->
-            <!-- ###LOOP_CONTENT### -->
-            <li class="facet-option ###FACET_LINK.HIDDEN###">
-              + ###FACET_LINK.LINK### <span class="facet-result-count">(###FACET_LINK.COUNT###)</span>
-            </li>
-            <!-- ###LOOP_CONTENT### -->
-            <!-- ###LOOP:FACET_LINKS### end -->
-            <!-- ###SINGLE_FACET_OPTION### end -->
-            ###FACET.showAllLink###
-          </ul>
-        </li>
-        <!-- ###SINGLE_FACET### end -->
-      </ul>
-    </div>
-    <!-- ###AVAILABLE_FACETS### end -->
-  </div>
-  <!-- ###SOLR_SEARCH_FACETING### end -->
-
-  <!-- ###SOLR_SEARCH_LASTSEARCHES### end -->
-  <div id="tx-solr-lastsearches" class="secondaryContentSection">
-    <div class="csc-header">
-      <h3 class="csc-firstHeader">###LLL:lastSearches###</h3>
-    </div>
-    <ul>
-      <!-- ###LOOP:LASTSEARCHES### begin -->
-      <!-- ###LOOP_CONTENT### -->
-      <li>
-        ###LINK:###LASTSEARCH.Q###|###LASTSEARCH.PID###|###LASTSEARCH.PARAMETERS###|0|rel="nofollow"###
-      </li>
-      <!-- ###LOOP_CONTENT### -->
-      <!-- ###LOOP:LASTSEARCHES### end -->
-    </ul>
-  </div>
-  <!-- ###SOLR_SEARCH_LASTSEARCHES### end -->
-
-  <!-- ###SOLR_SEARCH_FREQUENTSEARCHES### begin -->
-  <div id="tx-solr-frequent-searches" class="secondaryContentSection">
-    <div class="csc-header">
-      <h3 class="csc-firstHeader">###LLL:frequentSearches###</h3>
-    </div>
-    <ul>
-      <!-- ###LOOP:FREQUENTSEARCHES### begin -->
-      <!-- ###LOOP_CONTENT### -->
-      <li class="###TERM.CLASS###">###LINK:###TERM.TERM###|###TERM.PID###|###TERM.PARAMETERS###|0|rel="nofollow"###</li>
-      <!-- ###LOOP_CONTENT### -->
-      <!-- ###LOOP:FREQUENTSEARCHES### end -->
-    </ul>
-  </div>
-  <!-- ###SOLR_SEARCH_FREQUENTSEARCHES### end -->
-</div>
-<!-- ###SOLR_SEARCH### end -->
-
-<!-- ###SOLR_SEARCH_UNAVAILABLE### begin -->
-###LLL:searchUnavailable###
-<!-- ###SOLR_SEARCH_UNAVAILABLE### end -->
-
-<!-- ###SOLR_SEARCH_ERROR### begin -->
-###LLL:searchFailed###
-<!-- ###SOLR_SEARCH_ERROR### end -->
-</body>
+<f:section name="extra">
+</f:section>
 </html>
