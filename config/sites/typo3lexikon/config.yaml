@@ -1,0 +1,42 @@
+base: 'https://www.typo3lexikon.de/'
+baseVariants:
+  -
+    base: 'http://typo3lexikon.home/'
+    condition: 'applicationContext == "Development/DDevHome"'
+  -
+    base: 'http://typo3lexikon.ddev.site/'
+    condition: 'applicationContext == "Development/DDev"'
+errorHandling:
+  -
+    errorCode: 404
+    errorHandler: Page
+    errorContentSource: 't3://page?uid=292'
+languages:
+  -
+    title: Deutsch
+    enabled: true
+    languageId: 0
+    base: /
+    typo3Language: de
+    locale: de_DE.UTF-8
+    iso-639-1: de
+    navigationTitle: Deutsch
+    hreflang: de-DE
+    direction: ltr
+    flag: de
+    websiteTitle: 'Stefans TYPO3 Seite'
+    solr_core_read: core_de
+rootPageId: 1
+routeEnhancers:
+  PageTypeSuffix:
+    type: PageType
+    default: .html
+    map:
+      nurSoDa: 1234
+solr_enabled_read: true
+solr_host_read: typo3retter.de
+solr_path_read: /solr/
+solr_port_read: '8983'
+solr_scheme_read: http
+solr_use_write_connection: false
+websiteTitle: 'Stefans TYPO3 Seite'
