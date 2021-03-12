@@ -5,7 +5,7 @@ nbproject
 node_modules
 vendor
 typo3
-public/fileadmin
+public/fileadmin/*
 !public/fileadmin/form_definitions
 public/typo3temp
 public/typo3conf/ENABLE_INSTALL_TOOL
