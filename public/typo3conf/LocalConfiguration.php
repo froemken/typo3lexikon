@@ -12,23 +12,21 @@ return [
             'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2iPasswordHash',
             'options' => [],
         ],
-        'warning_email_addr' => 'froemken@gmail.com',
-        'warning_mode' => 2,
     ],
     'DB' => [
         'Connections' => [
             'Default' => [
                 'charset' => 'utf8mb4',
-                'dbname' => 'db226943_774',
+                'dbname' => '',
                 'driver' => 'mysqli',
-                'host' => '127.0.0.3',
-                'password' => ':4NmrqexBgz5',
+                'host' => '127.0.0.1',
+                'password' => '',
                 'port' => 3306,
                 'tableoptions' => [
                     'charset' => 'utf8',
                     'collate' => 'utf8_general_ci',
                 ],
-                'user' => 'db226943_774',
+                'user' => '',
             ],
         ],
     ],
@@ -100,10 +98,6 @@ return [
         ],
     ],
     'MAIL' => [
-        'defaultMailFromAddress' => 'info@typo3lexikon.de',
-        'defaultMailFromName' => 'Stefan Frömken',
-        'defaultMailReplyToAddress' => 'info@typo3lexikon.de',
-        'defaultMailReplyToName' => 'Stefan Frömken',
         'transport' => 'sendmail',
         'transport_sendmail_command' => '/usr/sbin/sendmail -t -i ',
         'transport_smtp_encrypt' => '',
