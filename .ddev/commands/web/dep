@@ -1,0 +1,7 @@
+#!/bin/bash
+
+## Description: Executes deployer (Command: dep) to deploy your project to foreign servers
+## Usage: dep [options] [arguments]
+## Example: "ddev dep list" or "ddev dep --version"
+
+/home/froemken/bin/dep $@
