@@ -1,0 +1,26 @@
+version: '3.6'
+services:
+  web:
+    volumes:
+      - type: tmpfs
+        tmpfs:
+          size: 268435456
+        target: /var/www/html/var
+      - type: volume
+        source: typo3_source_typo3lexikon
+        target: /var/www/html/public/typo3
+        volume:
+          nocopy: true
+      - type: volume
+        source: vendor_typo3lexikon
+        target: /var/www/html/vendor
+        volume:
+          nocopy: true
+    environment:
+      DDEV_UID:
+      DDEV_GID:
+volumes:
+  typo3_source_typo3lexikon:
+    driver: local
+  vendor_typo3lexikon:
+    driver: local
