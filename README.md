@@ -9,3 +9,5 @@ ddev composer install
 ...install/setup ssh keys...
 ddev dep import-sql
 ```
+
+DDEV installs its own AdditionalConfiguration.php which does not activate individual caches for Redis and APCu. Please have a look at AdditionalConfiguration.example.php and adapt the lines to your needs.
