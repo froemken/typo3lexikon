@@ -4,6 +4,9 @@ baseVariants:
     base: 'https://typo3lexikon.home/'
     condition: 'applicationContext == "Development/DDevHome"'
   -
+    base: 'http://typo3lexikon.typo3retter.de/'
+    condition: 'applicationContext == "Production/Netcup"'
+  -
     base: 'https://typo3lexikon.ddev.site/'
     condition: 'applicationContext == "Development/DDev"'
 errorHandling:

@@ -9,6 +9,7 @@ xdebug_enabled: false
 additional_hostnames: []
 additional_fqdns:
 - typo3lexikon.home
+- typo3lexikon.typo3retter.de
 mariadb_version: "10.2"
 mysql_version: ""
 hooks:
