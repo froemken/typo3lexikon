@@ -1,10 +1,10 @@
 base: 'https://www.typo3lexikon.de/'
 baseVariants:
   -
-    base: 'http://typo3lexikon.home/'
+    base: 'https://typo3lexikon.home/'
     condition: 'applicationContext == "Development/DDevHome"'
   -
-    base: 'http://typo3lexikon.ddev.site/'
+    base: 'https://typo3lexikon.ddev.site/'
     condition: 'applicationContext == "Development/DDev"'
 errorHandling:
   -
