@@ -74,8 +74,8 @@ task('pwd', function () {
     writeln("Current dir: $result");
 });
 
-desc('Download latest SQL Backup');
-task('download-sql', function () {
+desc('Import SQL backup from remote');
+task('import-sql', function () {
     $dayOfWeek = run('date "+%A"');
     $sqlBackupFile = "~/typo3cms/system/backup/databases/{{application}}.dump.sql.$dayOfWeek.gz";
     if (test("[ ! -f $sqlBackupFile ]")) {
