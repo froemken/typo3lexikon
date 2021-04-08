@@ -1,9 +1,6 @@
 base: 'https://www.typo3lexikon.de/'
 baseVariants:
   -
-    base: 'https://typo3lexikon.home/'
-    condition: 'applicationContext == "Development/DDevHome"'
-  -
     base: 'http://typo3lexikon.typo3retter.de/'
     condition: 'applicationContext == "Production/Netcup"'
   -

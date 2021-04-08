@@ -8,27 +8,24 @@ router_https_port: "443"
 xdebug_enabled: false
 additional_hostnames: []
 additional_fqdns:
-- typo3lexikon.home
+- typo3lexikon.de
+- www.typo3lexikon.de
 - typo3lexikon.typo3retter.de
 mariadb_version: "10.2"
 mysql_version: ""
 hooks:
   post-start:
-  - exec: bash -c "sudo mkdir -p /var/www/html/public/typo3"
-  - exec: bash -c "sudo chown -R ${DDEV_UID}:${DDEV_GID} /var/www/html/public/typo3"
-  - exec: bash -c "sudo mkdir -p /var/www/html/vendor"
-  - exec: bash -c "sudo chown -R ${DDEV_UID}:${DDEV_GID} /var/www/html/vendor"
-  - exec: bash -c "sudo mkdir -p /var/www/html/var"
-  - exec: bash -c "sudo chown -R ${DDEV_UID}:${DDEV_GID} /var/www/html/var"
+  - exec: bash -c "mkdir -p /var/www/html/public/typo3"
+  - exec: bash -c "mkdir -p /var/www/html/vendor"
+  - exec: bash -c "mkdir -p /var/www/html/var"
 use_dns_when_possible: true
 timezone: Europe/Berlin
 composer_version: "2"
 web_environment: []
 
-
-# This config.yaml was created with ddev version v1.17.0-alpha7
-# webimage: drud/ddev-webserver:20210226_heddn_assert_enable
-# dbimage: drud/ddev-dbserver-mariadb-10.3:20210213_db_image_no_sudo
+# This config.yaml was created with ddev version v1.17.0
+# webimage: drud/ddev-webserver-prod:v1.17.0
+# dbimage: drud/ddev-dbserver-mariadb-10.3:v1.17.0
 # dbaimage: phpmyadmin:5
 # However we do not recommend explicitly wiring these images into the
 # config.yaml as they may break future versions of ddev.
