@@ -23,6 +23,7 @@ timezone: Europe/Berlin
 composer_version: "2"
 web_environment: []
 
+
 # This config.yaml was created with ddev version v1.17.0
 # webimage: drud/ddev-webserver-prod:v1.17.0
 # dbimage: drud/ddev-dbserver-mariadb-10.3:v1.17.0
