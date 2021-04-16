@@ -8,12 +8,6 @@
 <INCLUDE_TYPOSCRIPT: source="FILE:./Setup/solr.typoscript">
 
 lib.content < styles.content.get
-# do not cache search plugin incl. page title
-[page|uid = 277]
-  lib.content >
-  lib.content = COA_INT
-  lib.content.10 < styles.content.get
-[end]
 
 lib.fluidContent.partialRootPaths.1450878401 >
 lib.fluidContent.partialRootPaths.10 = EXT:typo3lexikon/Resources/Private/Fsc/Partials/
@@ -23,12 +17,6 @@ lib.fluidContent.layoutRootPaths.1450878401 >
 
 lib.contentElement.partialRootPaths.10 = EXT:typo3lexikon/Resources/Private/Fsc/Partials/
 lib.contentElement.templateRootPaths.10 = EXT:typo3lexikon/Resources/Private/Fsc/Templates/
-
-tt_content.list {
-  dataProcessing {
-    10 = StefanFroemken\Typo3lexikon\Frontend\DataProcessing\ChangeSearchHeaderProcessor
-  }
-}
 
 # remove empty <p>-Tags in Frontend since CKEditor switch
 lib.parseFunc_RTE.nonTypoTagStdWrap.encapsLines.innerStdWrap_all >
