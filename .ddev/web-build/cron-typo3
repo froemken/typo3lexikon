@@ -1,0 +1,2 @@
+*/1 * * * * root /usr/bin/php /var/www/html/vendor/bin/typo3 scheduler:run >> /var/log/cron.log 2>&1
+

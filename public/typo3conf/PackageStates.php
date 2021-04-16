@@ -98,9 +98,6 @@ return [
         'viewpage' => [
             'packagePath' => 'typo3/sysext/viewpage/',
         ],
-        'filefill' => [
-            'packagePath' => 'typo3conf/ext/filefill/',
-        ],
         'solr' => [
             'packagePath' => 'typo3conf/ext/solr/',
         ],

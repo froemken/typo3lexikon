@@ -21,6 +21,7 @@ hooks:
   - exec-host: docker exec -it -u root ddev-typo3lexikon-web chown -R ${DDEV_UID}:${DDEV_GID} /var/www/html/var
   - exec-host: docker exec -it -u root ddev-typo3lexikon-web mkdir /var/www/html/vendor >/dev/null 2>$1
   - exec-host: docker exec -it -u root ddev-typo3lexikon-web chown -R ${DDEV_UID}:${DDEV_GID} /var/www/html/vendor
+  - exec-host: docker exec -it -u root ddev-typo3lexikon-web service cron start
 use_dns_when_possible: true
 timezone: Europe/Berlin
 composer_version: "2"
