@@ -23,6 +23,8 @@ deploy:
       # Set right file permissions for TYPO3
       - find $(pwd) -type f -not -path "$(pwd)/logs/*" -exec chmod 664 {} \;
       - find $(pwd) -type d -not -name "logs" -exec chmod 775 {} \;
+      # Remove .gitignore
+      - rm -f ./.gitignore
 
   # configure all following deployments of each branch
   recurring:
@@ -41,3 +43,5 @@ deploy:
       # Set right file permissions for TYPO3
       - find $(pwd) -type f -not -path "$(pwd)/logs/*" -exec chmod 664 {} \;
       - find $(pwd) -type d -not -name "logs" -exec chmod 775 {} \;
+      # Remove .gitignore
+      - rm -f ./.gitignore
