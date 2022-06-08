@@ -1,0 +1,35 @@
+version: 1.0
+deploy:
+  # comment in one of the following lines to force the use of the recurring or bootstrap configuration
+  #  force: recurring
+  #  force: bootstrap
+
+  # configure the initial deployment of each branch
+  bootstrap:
+    # directories that are not overwritten or removed by the next deployment
+    excludes:
+      - public/fileadmin
+      - public/uploads
+
+    # commands that are executed on the runtime after new files are copied
+    post-deployment-remote-commands:
+      # set right file permissions for TYPO3
+      - php vendor/bin/typo3cms install:fixfolderstructureartisan migrate --force
+      - php vendor/bin/typo3cms install:generatepackagestates
+      # migrate database, clear caches, migrate database
+      - php vendor/bin/typo3cms cache:flush
+
+  # configure all following deployments of each branch
+  recurring:
+    # directories that are not overwritten or removed by the next deployment
+    excludes:
+      - public/fileadmin
+      - public/uploads
+
+    # commands that are executed on the runtime after new files are copied
+    post-deployment-remote-commands:
+      # set right file permissions for TYPO3
+      - php vendor/bin/typo3cms install:fixfolderstructureartisan migrate --force
+      - php vendor/bin/typo3cms install:generatepackagestates
+      # migrate database, clear caches, migrate database
+      - php vendor/bin/typo3cms cache:flush
