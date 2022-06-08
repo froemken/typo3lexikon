@@ -20,6 +20,9 @@ deploy:
       - php -r "unlink('composer-setup.php');"
       # Install TYPO3 and all dependencies for LIVE
       - php ./composer.phar install --no-dev
+      # Set right file permissions for TYPO3
+      - find $(pwd) -type f -exec chmod 664 {} \;
+      - find $(pwd) -type d -exec chmod 775 {} \;
 
   # configure all following deployments of each branch
   recurring:
@@ -37,3 +40,6 @@ deploy:
       - php -r "unlink('composer-setup.php');"
       # Install TYPO3 and all dependencies for LIVE
       - php ./composer.phar install --no-dev
+      # Set right file permissions for TYPO3
+      - find $(pwd) -type f -exec chmod 664 {} \;
+      - find $(pwd) -type d -exec chmod 775 {} \;
