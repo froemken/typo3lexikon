@@ -1,8 +1,8 @@
 version: 1.0
 deploy:
   # comment in one of the following lines to force the use of the recurring or bootstrap configuration
+  force: bootstrap
   #  force: recurring
-  #  force: bootstrap
 
   # configure the initial deployment of each branch
   bootstrap:
@@ -23,10 +23,6 @@ deploy:
       # Set right file permissions for TYPO3
       - find $(pwd) -type f -not -path "$(pwd)/logs/*" -exec chmod 664 {} \;
       - find $(pwd) -type d -not -name "logs" -exec chmod 775 {} \;
-      - ls -l
-
-    post-deployment-remote-commands:
-      - ls -l
 
   # configure all following deployments of each branch
   recurring:
