@@ -15,6 +15,10 @@
 	"config": {
 		"platform": {
 			"php": "7.2"
+		},
+		"allow-plugins": {
+			"typo3/cms-composer-installers": true,
+			"typo3/class-alias-loader": true
 		}
 	},
 	"require": {
