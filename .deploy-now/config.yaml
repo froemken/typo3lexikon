@@ -48,6 +48,12 @@ deploy:
       #- find $(pwd) -type f -not -path "$(pwd)/logs/*" -exec chmod 664 {} \;
       #- find $(pwd) -type d -not -name "logs" -exec chmod 775 {} \;
       - ls -l
+      - ls -l public
+      - ls -l public/typo3
+      - ls -l vendor
 
     post-deployment-remote-commands:
       - ls -l
+      - ls -l public
+      - ls -l public/typo3
+      - ls -l vendor
