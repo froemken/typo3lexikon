@@ -23,8 +23,9 @@ deploy:
       # Set right file permissions for TYPO3
       #- find $(pwd) -type f -not -path "$(pwd)/logs/*" -exec chmod 664 {} \;
       #- find $(pwd) -type d -not -name "logs" -exec chmod 775 {} \;
+      - ls -l
 
-    post_deployment_remote_commands:
+    post-deployment-remote-commands:
       - ls -l
 
   # configure all following deployments of each branch
@@ -46,6 +47,7 @@ deploy:
       # Set right file permissions for TYPO3
       #- find $(pwd) -type f -not -path "$(pwd)/logs/*" -exec chmod 664 {} \;
       #- find $(pwd) -type d -not -name "logs" -exec chmod 775 {} \;
+      - ls -l
 
-    post_deployment_remote_commands:
+    post-deployment-remote-commands:
       - ls -l
