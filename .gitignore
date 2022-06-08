@@ -4,13 +4,12 @@ index.php
 nbproject
 node_modules
 vendor
-typo3
+public/typo3
 public/fileadmin/*
 !public/fileadmin/form_definitions
 public/typo3temp
 public/typo3conf/ENABLE_INSTALL_TOOL
 public/typo3conf/AdditionalConfiguration.php
-public/typo3conf/*.log
 public/typo3conf/ext/*
 public/uploads
 .sass-cache
