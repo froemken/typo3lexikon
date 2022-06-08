@@ -55,7 +55,10 @@
 		],
 		"post-autoload-dump": [
 			"@typo3-cms-scripts"
-		]
+		],
+		"post-root-package-install": [  
+			"@php -r \"file_exists('.env') || copy('.env.example', '.env');\""  
+		] 
 	},
 	"require-dev": {
 		"ichhabrecht/filefill": "^3.3"
