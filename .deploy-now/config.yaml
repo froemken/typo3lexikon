@@ -13,19 +13,13 @@ deploy:
 
     # commands that are executed on the runtime before new files are copied
     pre-deployment-remote-commands:
+      # Install composer
       - php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
       - php -r "if (hash_file('sha384', 'composer-setup.php') === '55ce33d7678c5a611085589f1f3ddf8b3c52d662cd01d4ba75c0ee0459970c2200a51f492d557530c71c15d8dba01eae') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
       - php composer-setup.php
       - php -r "unlink('composer-setup.php');"
+      # Install TYPO3 and all dependencies for LIVE
       - php ./composer.phar install --no-dev
-
-    # commands that are executed on the runtime after new files are copied
-    post-deployment-remote-commands:
-      # set right file permissions for TYPO3
-      - php vendor/bin/typo3cms install:fixfolderstructureartisan migrate --force
-      - php vendor/bin/typo3cms install:generatepackagestates
-      # migrate database, clear caches, migrate database
-      - php vendor/bin/typo3cms cache:flush
 
   # configure all following deployments of each branch
   recurring:
@@ -36,16 +30,10 @@ deploy:
 
     # commands that are executed on the runtime before new files are copied
     pre-deployment-remote-commands:
+      # Install composer
       - php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
       - php -r "if (hash_file('sha384', 'composer-setup.php') === '55ce33d7678c5a611085589f1f3ddf8b3c52d662cd01d4ba75c0ee0459970c2200a51f492d557530c71c15d8dba01eae') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
       - php composer-setup.php
       - php -r "unlink('composer-setup.php');"
+      # Install TYPO3 and all dependencies for LIVE
       - php ./composer.phar install --no-dev
-
-    # commands that are executed on the runtime after new files are copied
-    post-deployment-remote-commands:
-      # set right file permissions for TYPO3
-      - php vendor/bin/typo3cms install:fixfolderstructureartisan migrate --force
-      - php vendor/bin/typo3cms install:generatepackagestates
-      # migrate database, clear caches, migrate database
-      - php vendor/bin/typo3cms cache:flush
