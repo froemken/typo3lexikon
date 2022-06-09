@@ -55,10 +55,6 @@
 		],
 		"post-autoload-dump": [
 			"@typo3-cms-scripts"
-		],
-		"post-root-package-install": [
-			"@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
-			"@php -r \"file_exists('./public/typo3conf/AdditionalConfiguration.php') || copy('./public/typo3conf/AdditionalConfiguration.example.php', './public/typo3conf/AdditionalConfiguration.php');\""
 		]
 	},
 	"require-dev": {
