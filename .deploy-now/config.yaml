@@ -24,7 +24,7 @@ deploy:
       - php -r "unlink('composer-setup.php');"
       # Install TYPO3 and all dependencies for LIVE
       - php ./composer.phar install --no-dev
-      - php -r "var_dump($_ENV);"
+      - php -r "var_dump(\$_ENV);"
       # Set right file permissions for TYPO3
       - find $(pwd) -type f -not -path "$(pwd)/logs/*" -exec chmod 664 {} \;
       - find $(pwd) -type d -not -name "logs" -exec chmod 775 {} \;
