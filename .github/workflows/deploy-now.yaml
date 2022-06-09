@@ -37,6 +37,7 @@ jobs:
             IONOS_MAIL_PASSWORD: '${{ secrets.IONOS_MAIL_PASSWORD }}'
             IONOS_MAIL_PORT: '${{ secrets.IONOS_MAIL_PORT }}'
             IONOS_MAIL_USERNAME: '${{ secrets.IONOS_MAIL_USERNAME }}'
+            DEBUG: '${{ secrets.DEBUG }}'
 
       - name: Deploy to IONOS
         if: ${{ steps.project.outputs.deployment-enabled == 'true' }}
