@@ -23,10 +23,12 @@ deploy:
       - php -r "unlink('composer-setup.php');"
       # Install TYPO3 and all dependencies for LIVE
       - php ./composer.phar install --no-dev
-      - php -r "var_dump(\$_ENV);"
       # Set right file permissions for TYPO3
       - find $(pwd) -type f -not -path "$(pwd)/logs/*" -exec chmod 664 {} \;
       - find $(pwd) -type d -not -name "logs" -exec chmod 775 {} \;
+      # Update DB and clear cache
+      - php ./vendor/bin/typo3cms database:updateschema "*.add,*.change"
+      - php ./vendor/bin/typo3cms cache:flush
 
   # configure all following deployments of each branch
   recurring:
@@ -48,3 +50,6 @@ deploy:
       # Set right file permissions for TYPO3
       - find $(pwd) -type f -not -path "$(pwd)/logs/*" -exec chmod 664 {} \;
       - find $(pwd) -type d -not -name "logs" -exec chmod 775 {} \;
+      # Update DB and clear cache
+      - php ./vendor/bin/typo3cms database:updateschema "*.add,*.change"
+      - php ./vendor/bin/typo3cms cache:flush
