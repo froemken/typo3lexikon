@@ -8,6 +8,7 @@ deploy:
   bootstrap:
     # directories that are not overwritten or removed by the next deployment
     excludes:
+      - .ddev
       - public/fileadmin
       - public/uploads
 
@@ -31,6 +32,7 @@ deploy:
   recurring:
     # directories that are not overwritten or removed by the next deployment
     excludes:
+      - .ddev
       - public/fileadmin
       - public/uploads
 
