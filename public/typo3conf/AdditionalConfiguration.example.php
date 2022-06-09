@@ -13,7 +13,7 @@ if (getenv('DEBUG')) {
 }
 
 if (getenv('INSTALL_TOOL')) {
-    touch('./ENABLE_INSTALL_TOOL');
+    touch('./public/typo3conf/ENABLE_INSTALL_TOOL');
 }
 
 $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['driver'] = getenv('DB_DRIVER');
