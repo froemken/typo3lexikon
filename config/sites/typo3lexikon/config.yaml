@@ -1,7 +1,7 @@
 base: 'https://www.typo3lexikon.de/'
 baseVariants:
   -
-    base: 'https://https://home-5008552505.app-ionos.space/'
+    base: 'https://home-5008552505.app-ionos.space/'
     condition: 'applicationContext == "Production/Ionos"'
   -
     base: 'https://typo3lexikon.ddev.site/'
