@@ -14,11 +14,12 @@
 	"license": "GPL-2.0-or-later",
 	"config": {
 		"platform": {
-			"php": "7.2"
+			"php": "7.4"
 		},
 		"allow-plugins": {
 			"typo3/cms-composer-installers": true,
-			"typo3/class-alias-loader": true
+			"typo3/class-alias-loader": true,
+			"helhum/dotenv-connector": true
 		}
 	},
 	"require": {
@@ -46,7 +47,8 @@
 		"typo3/cms-dashboard": "^10.4",
 		"typo3/cms-scheduler": "^10.4",
 		"apache-solr-for-typo3/solr": "^11.0",
-		"stefanfroemken/typo3lexikon": "1.0.0"
+		"stefanfroemken/typo3lexikon": "1.0.0",
+		"helhum/dotenv-connector": "^3.0"
 	},
 	"scripts":{
 		"typo3-cms-scripts": [
