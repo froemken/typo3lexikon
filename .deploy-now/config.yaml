@@ -11,8 +11,8 @@ deploy:
       - public/fileadmin
       - public/uploads
 
-    # commands that are executed on the runtime before new files are copied
-    pre-deployment-remote-commands:
+    # Commands that are executed on the runtime after new files are copied
+    post-deployment-remote-commands:
       # Install composer
       - php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
       - php -r "if (hash_file('sha384', 'composer-setup.php') === '55ce33d7678c5a611085589f1f3ddf8b3c52d662cd01d4ba75c0ee0459970c2200a51f492d557530c71c15d8dba01eae') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
@@ -31,8 +31,8 @@ deploy:
       - public/fileadmin
       - public/uploads
 
-    # commands that are executed on the runtime before new files are copied
-    pre-deployment-remote-commands:
+    # Commands that are executed on the runtime after new files are copied
+    post-deployment-remote-commands:
       # Install composer
       - php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
       - php -r "if (hash_file('sha384', 'composer-setup.php') === '55ce33d7678c5a611085589f1f3ddf8b3c52d662cd01d4ba75c0ee0459970c2200a51f492d557530c71c15d8dba01eae') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
@@ -43,13 +43,3 @@ deploy:
       # Set right file permissions for TYPO3
       - find $(pwd) -type f -not -path "$(pwd)/logs/*" -exec chmod 664 {} \;
       - find $(pwd) -type d -not -name "logs" -exec chmod 775 {} \;
-      - ls -l
-      - ls -l public
-      - ls -l public/typo3
-      - ls -l vendor
-
-    post-deployment-remote-commands:
-      - ls -l
-      - ls -l public
-      - ls -l public/typo3
-      - ls -l vendor
