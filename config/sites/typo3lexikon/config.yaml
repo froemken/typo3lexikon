@@ -1,8 +1,8 @@
 base: 'https://www.typo3lexikon.de/'
 baseVariants:
   -
-    base: 'http://typo3lexikon.typo3retter.de/'
-    condition: 'applicationContext == "Production/Netcup"'
+    base: 'https://https://home-5008552505.app-ionos.space/'
+    condition: 'applicationContext == "Production/Ionos"'
   -
     base: 'https://typo3lexikon.ddev.site/'
     condition: 'applicationContext == "Development/DDev"'
