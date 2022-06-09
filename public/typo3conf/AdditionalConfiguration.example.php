@@ -12,6 +12,10 @@ if (getenv('DEBUG')) {
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['displayErrors'] = 0;
 }
 
+if (getenv('INSTALL_TOOL')) {
+    touch('./ENABLE_INSTALL_TOOL');
+}
+
 $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['driver'] = getenv('DB_DRIVER');
 $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['dbname'] = getenv('DB_NAME');
 $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['host'] = getenv('DB_HOST');
