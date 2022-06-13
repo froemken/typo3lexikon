@@ -35,6 +35,8 @@ deploy:
 
     # Commands that are executed on the runtime after new files are copied
     post-deployment-remote-commands:
+      # Activate AdditionalConfiguration.php
+      - php -r "file_exists('./public/typo3conf/AdditionalConfiguration.php') || copy('./public/typo3conf/AdditionalConfiguration.example.php', './public/typo3conf/AdditionalConfiguration.php');"
       # Set execution bit for files in vendor/bin
       - chmod +x ./vendor/bin/*
       # Update DB schema
