@@ -14,7 +14,6 @@ public/typo3conf/ext/*
 public/uploads
 .sass-cache
 var/*
-!var/labels
 _temp_
 .ddev/config.local.yaml
 *.cache
