@@ -1,10 +1,6 @@
 {
 	"repositories": {
 		"0": {
-			"type": "composer",
-			"url": "https://composer.typo3.org/"
-		},
-		"1": {
 			"type": "path",
 			"url": "./Source/Extensions/typo3lexikon/"
 		}
