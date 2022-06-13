@@ -1,7 +1,7 @@
 version: 1.0
 deploy:
   # comment in one of the following lines to force the use of the recurring or bootstrap configuration
-  force: bootstrap
+  #  force: bootstrap
   #  force: recurring
 
   # configure the initial deployment of each branch
@@ -14,20 +14,13 @@ deploy:
 
     # Commands that are executed on the runtime after new files are copied
     post-deployment-remote-commands:
-      # Activate .env and AdditionalConfiguration.php
+      # Activate AdditionalConfiguration.php
       - php -r "file_exists('./public/typo3conf/AdditionalConfiguration.php') || copy('./public/typo3conf/AdditionalConfiguration.example.php', './public/typo3conf/AdditionalConfiguration.php');"
-      # Install composer
-      #- php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-      #- php -r "if (hash_file('sha384', 'composer-setup.php') === '55ce33d7678c5a611085589f1f3ddf8b3c52d662cd01d4ba75c0ee0459970c2200a51f492d557530c71c15d8dba01eae') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
-      #- php composer-setup.php
-      #- php -r "unlink('composer-setup.php');"
-      # Install TYPO3 and all dependencies for LIVE
-      #- php ./composer.phar install --no-dev
-      # Set right file permissions for TYPO3
-      #- find $(pwd) -type f -not -path "$(pwd)/logs/*" -exec chmod 664 {} \;
-      #- find $(pwd) -type d -not -name "logs" -exec chmod 775 {} \;
-      # Update DB and clear cache
+      # Update DB schema
       - php ./vendor/bin/typo3cms database:updateschema "*.add,*.change"
+      # Update language labels
+      - php ./vendor/bin/typo3cms language:update
+      # Clear Cache
       - php ./vendor/bin/typo3cms cache:flush
 
   # configure all following deployments of each branch
@@ -40,16 +33,9 @@ deploy:
 
     # Commands that are executed on the runtime after new files are copied
     post-deployment-remote-commands:
-      # Install composer
-      #- php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-      #- php -r "if (hash_file('sha384', 'composer-setup.php') === '55ce33d7678c5a611085589f1f3ddf8b3c52d662cd01d4ba75c0ee0459970c2200a51f492d557530c71c15d8dba01eae') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
-      #- php composer-setup.php
-      #- php -r "unlink('composer-setup.php');"
-      # Install TYPO3 and all dependencies for LIVE
-      #- php ./composer.phar install --no-dev
-      # Set right file permissions for TYPO3
-      #- find $(pwd) -type f -not -path "$(pwd)/logs/*" -exec chmod 664 {} \;
-      #- find $(pwd) -type d -not -name "logs" -exec chmod 775 {} \;
-      # Update DB and clear cache
+      # Update DB schema
       - php ./vendor/bin/typo3cms database:updateschema "*.add,*.change"
+      # Update language labels
+      - php ./vendor/bin/typo3cms language:update
+      # Clear Cache
       - php ./vendor/bin/typo3cms cache:flush
