@@ -59,6 +59,9 @@ return [
         'about' => [
             'packagePath' => 'typo3/sysext/about/',
         ],
+        'adminpanel' => [
+            'packagePath' => 'typo3/sysext/adminpanel/',
+        ],
         'belog' => [
             'packagePath' => 'typo3/sysext/belog/',
         ],
@@ -97,6 +100,9 @@ return [
         ],
         'viewpage' => [
             'packagePath' => 'typo3/sysext/viewpage/',
+        ],
+        'filefill' => [
+            'packagePath' => 'typo3conf/ext/filefill/',
         ],
         'solr' => [
             'packagePath' => 'typo3conf/ext/solr/',
