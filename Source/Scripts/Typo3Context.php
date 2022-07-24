@@ -10,6 +10,8 @@ if (array_key_exists('HTTP_HOST', $_SERVER)) {
         $context = 'Development/DDevHome';
     } elseif ($_SERVER['HTTP_HOST'] === 'home-5008552505.app-ionos.space') {
         $context = 'Production/Ionos';
+    } elseif (strpos($_SERVER['HTTP_HOST'], '.app-ionos.space') !== false) {
+        $context = 'Development/Ionos';
     } elseif (preg_match('@^.*\.ddev\.site$@', $_SERVER['HTTP_HOST'])) {
         $context = 'Development/DDev';
     }

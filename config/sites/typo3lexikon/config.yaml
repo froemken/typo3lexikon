@@ -4,6 +4,9 @@ baseVariants:
     base: 'https://home-5008552505.app-ionos.space/'
     condition: 'applicationContext == "Production/Ionos"'
   -
+    base: 'https://home-5009568633.app-ionos.space/'
+    condition: 'applicationContext == "Development/Ionos"'
+  -
     base: 'https://typo3lexikon.ddev.site/'
     condition: 'applicationContext == "Development/DDev"'
 errorHandling:
