@@ -4,4 +4,4 @@
 ## Usage: dep [options] [arguments]
 ## Example: "ddev dep list" or "ddev dep --version"
 
-/home/froemken/bin/dep $@
+/var/www/html/vendor/bin/dep $@
