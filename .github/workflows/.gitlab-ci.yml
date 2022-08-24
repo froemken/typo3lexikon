@@ -14,10 +14,9 @@ jobs:
         run: |
           echo "<?php" >> public/typo3conf/AdditionalConfiguration.php
           echo "\$GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['default']['host'] = '${{ secrets.DB_HOST }}';" >> public/typo3conf/AdditionalConfiguration.php
-
-      - name: Debug AdditionalConfiguration.php
-        run: |
-          cat public/typo3conf/AdditionalConfiguration.php
+          echo "\$GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['default']['dbname'] = '${{ secrets.DB_NAME }}';" >> public/typo3conf/AdditionalConfiguration.php
+          echo "\$GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['default']['user'] = '${{ secrets.DB_USER }}';" >> public/typo3conf/AdditionalConfiguration.php
+          echo "\$GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['default']['password'] = '${{ secrets.DB_PASS }}';" >> public/typo3conf/AdditionalConfiguration.php
 
       - name: Setup PHP ${{ matrix.php }}, with composer and extensions
         uses: shivammathur/setup-php@v2
@@ -48,3 +47,4 @@ jobs:
         with:
           private-key: ${{ secrets.PRIVATE_KEY }}
           dep: deploy
+          verbosity: -vvv
