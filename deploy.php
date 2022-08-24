@@ -15,7 +15,8 @@ add('writable_dirs', []);
 
 host('sfroemken.de')
     ->set('remote_user', 'froemken')
-    ->set('deploy_path', '~/httpdocs/typo3lexikon.sfroemken.de');
+    ->set('deploy_path', '~/httpdocs/typo3lexikon.sfroemken.de')
+    ->set('ssh_multiplexing', false); // GitHub action seems to use an old OpenSSH version
 
 // Hooks
 

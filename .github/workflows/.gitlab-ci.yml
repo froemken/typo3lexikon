@@ -1,7 +1,10 @@
 name: Deploy typo3lexikon.de
 
-#on: [pull_request]
-on: [push]
+on:
+  push:
+    branches: [ master ]
+
+concurrency: production_environment
 
 jobs:
   build:
