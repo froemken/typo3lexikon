@@ -1,0 +1,49 @@
+name: Deploy typo3lexikon.de
+
+on:
+  - push
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: GIT Checkout Project
+        uses: actions/checkout@v3
+
+      - name: Create AdditionalConfiguration.php
+        run: |
+          echo "<?php" >> public/typo3conf/AdditionalConfiguration.php
+          echo "$GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['default']['host'] = '${{ secrets.DB_HOST }}'" >> public/typo3conf/AdditionalConfiguration.php
+          echo "$GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['default']['dbname'] = '${{ secrets.DB_NAME }}'" >> public/typo3conf/AdditionalConfiguration.php
+          echo "$GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['default']['user'] = '${{ secrets.DB_USER }}'" >> public/typo3conf/AdditionalConfiguration.php
+          echo "$GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['default']['password'] = '${{ secrets.DB_PASS }}'" >> public/typo3conf/AdditionalConfiguration.php
+
+      - name: Setup PHP ${{ matrix.php }}, with composer and extensions
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 7.4
+          extensions: mbstring, dom, zip
+
+      - name: Validate composer.json and composer.lock
+        run: composer validate
+
+      - name: Get composer cache directory
+        id: composer-cache
+        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+      - name: Cache composer dependencies
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.json') }}
+          restore-keys: ${{ runner.os }}-composer-
+
+      - name: Install dependencies with typo3/cms-core:^10.4
+        run: |
+          composer install --no-dev
+
+      - name: Deploy
+        uses: deployphp/action@v1
+        with:
+          private-key: ${{ secrets.PRIVATE_KEY }}
+          dep: deploy
