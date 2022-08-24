@@ -13,7 +13,7 @@ jobs:
       - name: Create AdditionalConfiguration.php
         run: |
           echo "<?php" >> public/typo3conf/AdditionalConfiguration.php
-          echo "$GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['default']['host'] = '${{ secrets.DB_HOST }}';" >> public/typo3conf/AdditionalConfiguration.php
+          echo "$$GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['default']['host'] = '${{ secrets.DB_HOST }}';" >> public/typo3conf/AdditionalConfiguration.php
 
       - name: Debug AdditionalConfiguration.php
         run: |
