@@ -47,6 +47,10 @@
 		"helhum/dotenv-connector": "^3.0",
 		"typo3/cms-adminpanel": "^10.4"
 	},
+	"require-dev": {
+		"ichhabrecht/filefill": "^3.3",
+		"deployer/deployer": "^7.0"
+	},
 	"scripts":{
 		"typo3-cms-scripts": [
 			"typo3cms install:fixfolderstructure",
@@ -55,9 +59,6 @@
 		"post-autoload-dump": [
 			"@typo3-cms-scripts"
 		]
-	},
-	"require-dev": {
-		"ichhabrecht/filefill": "^3.3"
 	},
 	"autoload": {
 		"files": [
