@@ -13,7 +13,7 @@ host('sfroemken.de')
 
 // Config
 set('repository', 'https://github.com/froemken/typo3lexikon');
-add('shared_files', []);
+set('shared_files', []);
 add('shared_dirs', []);
 add('writable_dirs', []);
 
