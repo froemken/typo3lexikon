@@ -31,6 +31,15 @@ after('deploy', 'deploy:postProcess');
 after('deploy:failed', 'deploy:unlock');
 
 // Local tasks
-task('updateTypo3', function () {
+desc('Update local typo3 via composer update');
+task('updateLocalTypo3', function () {
     runLocally('composer update typo3/cms-* --with-all-dependencies --profile');
+});
+desc('Update local database. TYPO3 DB compare');
+task('updateLocalDatabase', function () {
+    runLocally('vendor/bin/typo3cms database:updateschema "*.add,*.change"');
+});
+desc('Flush local cache');
+task('flushLocalCache', function () {
+    runLocally('vendor/bin/typo3cms cache:flush');
 });
