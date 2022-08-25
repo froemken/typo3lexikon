@@ -1,4 +1,12 @@
 <?php
+
+/*
+ * This file is part of the package stefanfroemken/typo3lexikon.
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE file that was distributed with this source code.
+ */
+
 namespace StefanFroemken\Typo3lexikon\Ajax;
 
 /*
@@ -15,7 +23,6 @@ namespace StefanFroemken\Typo3lexikon\Ajax;
  */
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use StefanFroemken\Typo3lexikon\Console\AnswerQuestions;
 use StefanFroemken\Typo3lexikon\Console\ExecuteCommands;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\HttpUtility;
@@ -25,8 +32,6 @@ use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
 /**
  * Class Console
- *
- * @package StefanFroemken\Typo3lexikon\Ajax
  */
 class Console
 {
@@ -88,7 +93,7 @@ class Console
         }
         return $output;
     }
-    
+
     /**
      * Get Answers from DB
      *
@@ -99,9 +104,9 @@ class Console
     protected function getAnswer($question)
     {
         if (empty($question)) {
-            return array();
+            return [];
         }
-        $where = array();
+        $where = [];
         foreach (GeneralUtility::trimExplode(' ', $question) as $word) {
             $where[] = 'w.word=' . $this->getDatabaseConnection()->fullQuoteStr($word, 'tx_typo3lexikon_word');
         }
@@ -113,7 +118,8 @@ class Console
             LEFT JOIN tx_typo3lexikon_answer a
             ON mm.uid_local=a.uid',
             '(' . implode(' OR ', $where) . ')',
-            'a.uid', 'amount DESC'
+            'a.uid',
+            'amount DESC'
         );
         if (empty($row)) {
             return 'bla';
@@ -129,7 +135,7 @@ class Console
      */
     protected function searchForPages($input)
     {
-        $likeForBodytext = array();
+        $likeForBodytext = [];
         $searchWords = GeneralUtility::trimExplode(' ', $input, true);
         foreach ($searchWords as $searchWord) {
             $searchWord = htmlspecialchars(strip_tags(trim($searchWord)));
@@ -156,9 +162,9 @@ class Console
             '0, 10'
         );
         if (!$pages) {
-            $pages = array();
+            $pages = [];
         }
-        $output = array();
+        $output = [];
         foreach ($pages as $page) {
             $output[] = sprintf(
                 'ID: %d - Title: %s - Header: %s',

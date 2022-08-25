@@ -1,5 +1,12 @@
 <?php
 
+/*
+ * This file is part of the package stefanfroemken/typo3lexikon.
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE file that was distributed with this source code.
+ */
+
 namespace StefanFroemken\Typo3lexikon\Command;
 
 /*
@@ -26,7 +33,7 @@ class ConsoleCommandController extends CommandController
      * @var \TYPO3\CMS\Core\Database\DatabaseConnection
      */
     protected $databaseConnection;
-    
+
     /**
      * initializes this object.
      */
@@ -34,7 +41,7 @@ class ConsoleCommandController extends CommandController
     {
         $this->databaseConnection = $GLOBALS['TYPO3_DB'];
     }
-    
+
     /**
      * Installs an extension by key
      *
@@ -43,13 +50,11 @@ class ConsoleCommandController extends CommandController
      *
      * @param string $question
      * @param string $answer
-     *
-     * @return void
      */
     public function addAnswerCommand($question, $answer)
     {
         $answerId = $this->insertAnswer($answer);
-        
+
         $words = GeneralUtility::trimExplode(' ', $question);
         $words = array_unique($words);
         // @ToDo: remove exclude words like "the" and "a"
@@ -57,15 +62,15 @@ class ConsoleCommandController extends CommandController
             $wordId = $this->insertWord($word);
             $this->databaseConnection->exec_INSERTquery(
                 'tx_typo3lexikon_answer_word_mm',
-                array(
+                [
                     'uid_local' => $answerId,
                     'uid_foreign' => $wordId
-                )
+                ]
             );
         }
         $this->outputLine('Answer was added');
     }
-    
+
     /**
      * Insert answer to database
      *
@@ -77,13 +82,13 @@ class ConsoleCommandController extends CommandController
     {
         $this->databaseConnection->exec_INSERTquery(
             'tx_typo3lexikon_answer',
-            array(
+            [
                 'answer' => trim($answer)
-            )
+            ]
         );
         return (int)$this->databaseConnection->sql_insert_id();
     }
-    
+
     /**
      * Insert word to database
      *
@@ -101,13 +106,12 @@ class ConsoleCommandController extends CommandController
         if (empty($row)) {
             $this->databaseConnection->exec_INSERTquery(
                 'tx_typo3lexikon_word',
-                array(
+                [
                     'word' => $word
-                )
+                ]
             );
             return (int)$this->databaseConnection->sql_insert_id();
         }
         return (int)$row['uid'];
     }
 }
-

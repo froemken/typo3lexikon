@@ -1,4 +1,12 @@
 <?php
+
+/*
+ * This file is part of the package stefanfroemken/typo3lexikon.
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE file that was distributed with this source code.
+ */
+
 namespace StefanFroemken\Typo3lexikon\Console;
 
 /*
@@ -41,9 +49,11 @@ class ExecuteCommands
             $this->deleteAllCookies();
             $output = 'All cookies for this page are now deleted';
         } elseif (StringUtility::beginsWith($command, 'ping')) {
-            exec(sprintf(
+            exec(
+                sprintf(
                 'ping -c 1 -W 5 %s',
-                escapeshellarg(trim(str_replace('ping', '', $command)))),
+                escapeshellarg(trim(str_replace('ping', '', $command)))
+            ),
                 $res,
                 $returnValue
             );
@@ -58,7 +68,8 @@ class ExecuteCommands
      * @param string $command
      * @return string
      */
-    protected function convert($command) {
+    protected function convert($command)
+    {
         $lowerCasedCommand = strtolower($command);
         if (StringUtility::beginsWith($lowerCasedCommand, 'md5')) {
             $output = md5(trim(str_ireplace('md5', '', $command)));
@@ -81,7 +92,8 @@ class ExecuteCommands
      * @param string $command
      * @return string
      */
-    protected function show($command) {
+    protected function show($command)
+    {
         $output = '';
         $lowerCasedCommand = strtolower($command);
         if ($lowerCasedCommand === 'environment' || $lowerCasedCommand === 'env') {
@@ -114,10 +126,9 @@ class ExecuteCommands
 
     /**
      * delete all cookies set by this page
-     *
-     * @return void
      */
-    protected function deleteAllCookies() {
+    protected function deleteAllCookies()
+    {
         if (isset($_COOKIE)) {
             foreach ($_COOKIE as $cookieName => $value) {
                 setcookie($cookieName, '', time() - 1000);
