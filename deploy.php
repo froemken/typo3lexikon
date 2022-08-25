@@ -17,23 +17,20 @@ set('shared_files', []);
 add('shared_dirs', []);
 add('writable_dirs', []);
 
-task('deploy:uploadConfig', function () {
+// Remote tasks
+task('deploy:postProcess', function () {
     upload(
         'public/typo3conf/AdditionalConfiguration.php',
         get('release_path') . '/public/typo3conf/AdditionalConfiguration.php'
     );
-});
-
-task('deploy:dbCompare', function () {
     run('cd ' . get('release_path') . ' && vendor/bin/typo3cms database:updateschema "*.add,*.change"');
+    run('cd ' . get('release_path') . ' && vendor/bin/typo3cms language:update');
+    run('cd ' . get('release_path') . ' && vendor/bin/typo3cms cache:flush');
 });
+after('deploy', 'deploy:postProcess');
+after('deploy:failed', 'deploy:unlock');
 
-after('deploy', 'deploy:uploadConfig');
-after('deploy', 'deploy:dbCompare');
-
+// Local tasks
 task('updateTypo3', function () {
     runLocally('composer update typo3/cms-* --with-all-dependencies --profile');
 });
-
-// Hooks
-after('deploy:failed', 'deploy:unlock');
