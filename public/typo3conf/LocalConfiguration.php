@@ -32,6 +32,9 @@ return [
     ],
     'EXT' => [],
     'EXTCONF' => [
+        'helhum-typo3-console' => [
+            'initialUpgradeDone' => '10.4',
+        ],
         'lang' => [
             'availableLanguages' => [
                 'de',
@@ -57,6 +60,9 @@ return [
         ],
         'solr' => [
             'allowSelfSignedCertificates' => '0',
+            'includeGlobalQParameterInCacheHash' => '0',
+            'monitoringType' => '0',
+            'pluginNamespaces' => 'tx_solr',
             'useConfigurationFromClosestTemplate' => '0',
             'useConfigurationMonitorTables' => '',
             'useConfigurationTrackRecordsOutsideSiteroot' => '1',
