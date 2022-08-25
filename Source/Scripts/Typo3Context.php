@@ -6,9 +6,7 @@ $context = 'Production';
 
 // detect application context by domain
 if (array_key_exists('HTTP_HOST', $_SERVER)) {
-    if ($_SERVER['HTTP_HOST'] === 'typo3lexikon.home') {
-        $context = 'Development/DDevHome';
-    } elseif ($_SERVER['HTTP_HOST'] === 'typo3lexikon.sfroemken.de') {
+    if ($_SERVER['HTTP_HOST'] === 'typo3lexikon.sfroemken.de') {
         $context = 'Production/Strato';
     } elseif (preg_match('@^.*\.ddev\.site$@', $_SERVER['HTTP_HOST'])) {
         $context = 'Development/DDev';
