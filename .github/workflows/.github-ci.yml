@@ -59,4 +59,4 @@ jobs:
           known-hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
           # copy SSH config part without identityFile to secret
           ssh-config: ${{ secrets.SSH_CONFIG }}
-          dep: deploy -vvv
+          dep: deploy
