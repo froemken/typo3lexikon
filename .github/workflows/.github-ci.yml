@@ -43,12 +43,20 @@ jobs:
 
       - name: Install dependencies with typo3/cms-core:^10.4
         run: |
-          composer install --no-dev
+          composer install --verbose --prefer-dist --no-progress --no-interaction --no-dev --no-suggest
+
+      - name: php-cs-fixer
+        run: composer ci:php:fixer
+
+      - name: Lint PHP
+        run: composer ci:php:lint
 
       - name: Deploy
         uses: deployphp/action@v1
         with:
           private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          # copy result of "ssh-keyscan [domain]" to secret
           known-hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
+          # copy SSH config part without identityFile to secret
           ssh-config: ${{ secrets.SSH_CONFIG }}
-          dep: deploy -vvv
+          dep: deploy
