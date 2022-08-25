@@ -31,5 +31,9 @@ task('deploy:dbCompare', function () {
 after('deploy', 'deploy:uploadConfig');
 after('deploy', 'deploy:dbCompare');
 
+task('updateTypo3', function () {
+    runLocally('composer update typo3/cms-* --with-all-dependencies --profile');
+});
+
 // Hooks
 after('deploy:failed', 'deploy:unlock');
