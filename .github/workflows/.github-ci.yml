@@ -43,7 +43,7 @@ jobs:
 
       - name: Install dependencies with typo3/cms-core:^10.4
         run: |
-          composer install --verbose --prefer-dist --no-progress --no-interaction --no-dev --no-suggest
+          composer install --verbose --prefer-dist --no-progress --no-interaction --no-suggest
 
       - name: php-cs-fixer
         run: composer ci:php:fixer
