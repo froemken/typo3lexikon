@@ -1,0 +1,5 @@
+/Build/ export-ignore
+/Source/Extensions/Tests/ export-ignore
+/.gitattributes export-ignore
+/.gitignore export-ignore
+/.editorconfig export-ignore
