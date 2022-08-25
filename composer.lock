@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a8aac0ebe10d0f7a59a0b9d5bd2fe760",
+    "content-hash": "34cd7af152a1a7cb466ee354242f60b3",
     "packages": [
         {
             "name": "apache-solr-for-typo3/solr",
@@ -2163,16 +2163,24 @@
         },
         {
             "name": "stefanfroemken/typo3lexikon",
-            "version": "1.0.0",
+            "version": "dev-main",
             "dist": {
                 "type": "path",
                 "url": "./Source/Extensions/typo3lexikon",
-                "reference": "af2035ab28992c8809dd8c8a43cd9fc4c4a369e7"
+                "reference": "ab13a8c88d6883930b181a34e3e545ae655b64e4"
             },
             "require": {
                 "typo3/cms-core": "^10.4"
             },
+            "require-dev": {
+                "roave/security-advisories": "dev-latest"
+            },
             "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "typo3lexikon"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "StefanFroemken\\Typo3lexikon\\": "Classes"
@@ -10250,6 +10258,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "stefanfroemken/typo3lexikon": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": false,
