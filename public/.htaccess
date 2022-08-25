@@ -23,7 +23,9 @@
 #
 ####
 
+
 ### Begin: Compression ###
+
 # Compressing resource files will save bandwidth and so improve loading speed especially for users
 # with slower internet connections. TYPO3 can compress the .js and .css files for you.
 # *) Uncomment the following lines and
@@ -96,11 +98,16 @@ AddEncoding gzip .gzip
 		AddEncoding gzip svgz
 	</IfModule>
 </IfModule>
+
 ### End: Compression ###
 
+
+
 ### Begin: Browser caching of resource files ###
+
 # This affects Frontend and Backend and increases performance.
 <IfModule mod_expires.c>
+
 	ExpiresActive on
 	ExpiresDefault                                      "access plus 1 month"
 
@@ -153,12 +160,27 @@ AddEncoding gzip .gzip
 	ExpiresByType application/font-woff2                "access plus 1 month"
 
 	ExpiresByType text/x-cross-domain-policy            "access plus 1 week"
+
 </IfModule>
+
 ### End: Browser caching of resource files ###
 
+
 ### Begin: MIME types ###
+
 # Proper MIME types for all files
 <IfModule mod_mime.c>
+	# Security configuration
+	RemoveType .html .htm
+	<FilesMatch ".+\.html?$">
+		AddType text/html .html .htm
+	</FilesMatch>
+
+	RemoveType .svg .svgz
+	<FilesMatch ".+\.svgz?$">
+		AddType image/svg+xml .svg .svgz
+	</FilesMatch>
+
 	# Data interchange
 	AddType application/atom+xml                        atom
 	AddType application/json                            json map topojson
@@ -176,10 +198,10 @@ AddEncoding gzip .gzip
 	AddType text/cache-manifest                         appcache
 
 	# Media files
+
 	AddType audio/mp4                                   f4a f4b m4a
 	AddType audio/ogg                                   oga ogg opus
 	AddType image/bmp                                   bmp
-	AddType image/svg+xml                               svg svgz
 	AddType image/webp                                  webp
 	AddType video/mp4                                   f4v f4p m4v mp4
 	AddType video/ogg                                   ogv
@@ -188,11 +210,11 @@ AddEncoding gzip .gzip
 	AddType image/x-icon                                cur ico
 
 	# Web fonts
-	AddType application/font-woff                       woff
-	AddType application/font-woff2                      woff2
+	AddType font/woff                                   woff
+	AddType font/woff2                                  woff2
 	AddType application/vnd.ms-fontobject               eot
-	AddType application/x-font-ttf                      ttc ttf
-	AddType font/opentype                               otf
+	AddType font/ttf                                    ttc ttf
+	AddType font/otf                                    otf
 
 	# Other
 	AddType application/octet-stream                    safariextz
@@ -204,6 +226,7 @@ AddEncoding gzip .gzip
 	AddType text/vnd.rim.location.xloc                  xloc
 	AddType text/vtt                                    vtt
 	AddType text/x-component                            htc
+
 </IfModule>
 
 # UTF-8 encoding
@@ -211,9 +234,13 @@ AddDefaultCharset utf-8
 <IfModule mod_mime.c>
 	AddCharset utf-8 .atom .css .js .json .manifest .rdf .rss .vtt .webapp .webmanifest .xml
 </IfModule>
+
 ### End: MIME types ###
 
+
+
 ### Begin: Cross Origin ###
+
 # Send the CORS header for images when browsers request it.
 <IfModule mod_setenvif.c>
 	<IfModule mod_headers.c>
@@ -230,16 +257,23 @@ AddDefaultCharset utf-8
 		Header set Access-Control-Allow-Origin "*"
 	</FilesMatch>
 </IfModule>
+
 ### End: Cross Origin ###
 
+
+
 ### Begin: Rewriting and Access ###
+
 # You need rewriting, if you use a URL-Rewriting extension (RealURL, CoolUri).
+
 <IfModule mod_rewrite.c>
+
 	# Enable URL rewriting
 	RewriteEngine On
 
-	RewriteCond %{SERVER_PORT} !^443$
-	RewriteRule (.*) https://%{HTTP_HOST}/$1 [L]
+  RewriteCond %{HTTP_HOST} !\.ddev\.site$
+  RewriteCond %{HTTPS} off
+	RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]
 
 	# Store the current location in an environment variable CWD to use
 	# mod_rewrite in .htaccess files without knowing the RewriteBase
@@ -277,7 +311,7 @@ AddDefaultCharset utf-8
 
 	# Stop rewrite processing, if we are in the typo3/ directory or any other known directory
 	# NOTE: Add your additional local storages here
-	RewriteRule ^(?:typo3/|fileadmin/|typo3conf/|typo3temp/|uploads/|favicon\.ico) - [L]
+	RewriteRule ^(?:typo3/|fileadmin/|typo3conf/|typo3temp/|uploads/) - [L]
 
 	# If the file/symlink/directory does not exist => Redirect to index.php.
 	# For httpd.conf, you need to prefix each '%{REQUEST_FILENAME}' with '%{DOCUMENT_ROOT}'.
@@ -286,11 +320,11 @@ AddDefaultCharset utf-8
 	RewriteCond %{REQUEST_FILENAME} !-l
 	RewriteRule ^.*$ %{ENV:CWD}index.php [QSA,L]
 
-	RewriteCond  %{HTTP_HOST} ^www\.typo3\.sfroemken\.de$ [NC]
+	RewriteCond %{HTTP_HOST} ^www\.typo3\.sfroemken\.de$ [NC]
 	RewriteRule ^(.*)$ https://www.typo3lexikon.de/$1 [R=301,L]
-	RewriteCond  %{HTTP_HOST} ^typo3\.sfroemken\.de$ [NC]
+	RewriteCond %{HTTP_HOST} ^typo3\.sfroemken\.de$ [NC]
 	RewriteRule ^(.*)$ https://www.typo3lexikon.de/$1 [R=301,L]
-	RewriteCond  %{HTTP_HOST} ^typo3lexikon\.de$ [NC]
+	RewriteCond %{HTTP_HOST} ^typo3lexikon\.de$ [NC]
 	RewriteRule ^(.*)$ https://www.typo3lexikon.de/$1 [R=301,L]
 
 	# Site is gone forever 410
@@ -327,6 +361,8 @@ AddDefaultCharset utf-8
 
 ### End: Rewriting and Access ###
 
+
+
 ### Begin: Miscellaneous ###
 
 # 404 error prevention for non-existing redirected folders
@@ -355,5 +391,6 @@ Options -MultiViews
 FileETag None
 
 ### End: Miscellaneous ###
+
 
 # Add your own rules here.
