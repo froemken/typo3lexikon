@@ -16,7 +16,7 @@ add('writable_dirs', []);
 task('deploy:uploadConfig', function () {
     upload(
         'public/typo3conf/AdditionalConfiguration.php',
-        'public/typo3conf/AdditionalConfiguration.php'
+        '~/httpdocs/typo3lexikon.sfroemken.de/public/typo3conf/AdditionalConfiguration.php'
     );
 });
 
