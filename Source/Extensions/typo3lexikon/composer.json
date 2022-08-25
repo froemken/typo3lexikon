@@ -2,7 +2,6 @@
     "name": "stefanfroemken/typo3lexikon",
     "type": "typo3-cms-extension",
     "description": "Template for my own site",
-    "version": "1.0.0",
     "license": "GPL-2.0-or-later",
     "keywords": ["typo3", "TYPO3 CMS", "typo3lexikon"],
     "homepage": "https://www.typo3lexikon.de",
@@ -20,6 +19,9 @@
     },
     "require": {
       "typo3/cms-core": "^10.4"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest"
     },
     "autoload": {
         "psr-4": {
