@@ -18,16 +18,7 @@ task('deploy:uploadConfig', function () {
     );
 });
 
-/**
- * Main TYPO3 task
- */
-desc('Deploys your project');
-task('deploy', [
-    'deploy:prepare',
-    'deploy:vendors',
-    'deploy:publish',
-    'deploy:uploadConfig'
-]);
+after('deploy', 'deploy:uploadConfig');
 
 // Hosts
 host('sfroemken.de')
