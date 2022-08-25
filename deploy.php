@@ -7,6 +7,8 @@ require 'recipe/typo3.php';
 set('typo3_webroot', 'public');
 
 // Config
+set('repository', 'https://github.com/froemken/typo3lexikon');
+
 add('shared_files', []);
 add('shared_dirs', []);
 add('writable_dirs', []);
