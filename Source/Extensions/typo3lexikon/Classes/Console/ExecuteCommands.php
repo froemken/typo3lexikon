@@ -51,9 +51,9 @@ class ExecuteCommands
         } elseif (StringUtility::beginsWith($command, 'ping')) {
             exec(
                 sprintf(
-                'ping -c 1 -W 5 %s',
-                escapeshellarg(trim(str_replace('ping', '', $command)))
-            ),
+                    'ping -c 1 -W 5 %s',
+                    escapeshellarg(trim(str_replace('ping', '', $command)))
+                ),
                 $res,
                 $returnValue
             );
