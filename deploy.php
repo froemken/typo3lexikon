@@ -3,14 +3,6 @@ namespace Deployer;
 
 require 'recipe/typo3.php';
 
-if (
-    array_key_exists('HTTP_HOST', $_SERVER)
-    && preg_match('@^.*\.ddev\.site$@', $_SERVER['HTTP_HOST'])
-) {
-    echo 'Do not deploy locally. Use GIT push and wait for Github actions';
-    exit;
-}
-
 // DocumentRoot / WebRoot for the TYPO3 installation
 set('typo3_webroot', 'public');
 
