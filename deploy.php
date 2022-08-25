@@ -24,7 +24,12 @@ task('deploy:uploadConfig', function () {
     );
 });
 
+task('deploy:dbCompare', function () {
+    run("cd {{deploy_path}} && vendor/bin/typo3cms database:updateschema \"*.add,*.change\"");
+});
+
 after('deploy', 'deploy:uploadConfig');
+after('deploy', 'deploy:dbCompare');
 
 // Hooks
 after('deploy:failed', 'deploy:unlock');
