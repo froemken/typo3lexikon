@@ -20,6 +20,9 @@ jobs:
           echo "\$GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['dbname'] = '${{ secrets.DB_NAME }}';" >> public/typo3conf/AdditionalConfiguration.php
           echo "\$GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['user'] = '${{ secrets.DB_USER }}';" >> public/typo3conf/AdditionalConfiguration.php
           echo "\$GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']['password'] = '${{ secrets.DB_PASS }}';" >> public/typo3conf/AdditionalConfiguration.php
+          echo "\$GLOBALS['TYPO3_CONF_VARS']['MAIL']['transport_smtp_server'] = '${{ secrets.MAIL_SERVER }}';" >> public/typo3conf/AdditionalConfiguration.php
+          echo "\$GLOBALS['TYPO3_CONF_VARS']['MAIL']['transport_smtp_username'] = '${{ secrets.MAIL_USER }}';" >> public/typo3conf/AdditionalConfiguration.php
+          echo "\$GLOBALS['TYPO3_CONF_VARS']['MAIL']['transport_smtp_password'] = '${{ secrets.MAIL_PASS }}';" >> public/typo3conf/AdditionalConfiguration.php
 
       - name: Setup PHP ${{ matrix.php }}, with composer and extensions
         uses: shivammathur/setup-php@v2
