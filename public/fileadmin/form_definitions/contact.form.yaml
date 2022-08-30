@@ -7,17 +7,18 @@ finishers:
   -
     options:
       subject: 'Kontakt von Typo3lexikon'
-      recipientAddress: froemken@gmail.com
-      recipientName: 'Stefan FrÃ¶mken'
-      senderAddress: webmaster@typo3lexikon.de
-      senderName: Webmaster
-      replyToAddress: '{text-1}'
+      senderAddress: info@typo3lexikon.de
+      senderName: Stefan Frömken
       carbonCopyAddress: ''
       blindCarbonCopyAddress: ''
       format: html
       attachUploads: 'true'
       translation:
-        language: ''
+        language: 'default'
+      recipients:
+        froemken@gmail.com: Stefan Frömken
+      replyToRecipients:
+        '{text-1}': ''
     identifier: EmailToReceiver
   -
     options:
