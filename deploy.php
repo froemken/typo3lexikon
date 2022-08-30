@@ -5,8 +5,8 @@ require 'recipe/typo3.php';
 
 // DocumentRoot / WebRoot for the TYPO3 installation
 set('typo3_webroot', 'public');
-// PHP version will be set through .php-version file on remote server
-set('bin/php', 'php');
+// Remove php bin path. PHP version will be set through .php-version file on remote server
+set('bin/php', '');
 
 // Hosts
 host('sfroemken.de')
