@@ -18,7 +18,7 @@
       "source": "https://github.com/froemken/typo3lexikon"
     },
     "require": {
-      "typo3/cms-core": "^10.4"
+      "typo3/cms-core": "^11.5"
     },
     "require-dev": {
         "roave/security-advisories": "dev-latest"

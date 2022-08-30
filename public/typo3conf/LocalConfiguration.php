@@ -7,7 +7,6 @@ return [
         'installToolPassword' => '$argon2i$v=19$m=16384,t=16,p=2$NXdiTTdTbzE0dGNPTU4ydA$ltzKsw45OTphok+MxdJAxq9vKjr20UBlxRQmVsvLCb0',
         'lockSSL' => true,
         'lockSSLPort' => 443,
-        'loginSecurityLevel' => 'normal',
         'passwordHashing' => [
             'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2iPasswordHash',
             'options' => [],
@@ -49,6 +48,7 @@ return [
             'loginFootnote' => '',
             'loginHighlightColor' => '',
             'loginLogo' => '',
+            'loginLogoAlt' => '',
         ],
         'extensionmanager' => [
             'automaticInstallation' => '1',
@@ -73,7 +73,6 @@ return [
         'debug' => false,
         'disableNoCacheParameter' => true,
         'enable_mount_pids' => false,
-        'loginSecurityLevel' => 'normal',
         'passwordHashing' => [
             'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2iPasswordHash',
             'options' => [],

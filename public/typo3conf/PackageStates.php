@@ -56,9 +56,6 @@ return [
         'rte_ckeditor' => [
             'packagePath' => 'typo3/sysext/rte_ckeditor/',
         ],
-        'about' => [
-            'packagePath' => 'typo3/sysext/about/',
-        ],
         'adminpanel' => [
             'packagePath' => 'typo3/sysext/adminpanel/',
         ],
