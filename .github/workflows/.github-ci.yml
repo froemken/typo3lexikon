@@ -2,7 +2,9 @@ name: Deploy typo3lexikon.de
 
 on:
   push:
-    branches: [ master ]
+    branches:
+      - master
+      - dev
 
 concurrency: production_environment
 
@@ -56,7 +58,8 @@ jobs:
       #- name: Lint PHP
       #  run: composer ci:php:lint
 
-      - name: Deploy
+      - name: Deploy LIVE
+        if: ${{ github.ref_name == 'master' }}
         uses: deployphp/action@v1
         with:
           private-key: ${{ secrets.SSH_PRIVATE_KEY }}
@@ -64,4 +67,15 @@ jobs:
           known-hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
           # copy SSH config part without identityFile to secret
           ssh-config: ${{ secrets.SSH_CONFIG }}
-          dep: deploy
+          dep: deploy prod
+
+      - name: Deploy DEV
+        if: ${{ github.ref_name == 'dev' }}
+        uses: deployphp/action@v1
+        with:
+          private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          # copy result of "ssh-keyscan [domain]" to secret
+          known-hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
+          # copy SSH config part without identityFile to secret
+          ssh-config: ${{ secrets.SSH_CONFIG }}
+          dep: deploy dev

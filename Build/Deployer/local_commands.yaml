@@ -1,0 +1,10 @@
+tasks:
+  typo3:local:update:
+    - desc: 'Update local typo3 via composer update'
+    - run_locally: 'composer update typo3/cms-* --with-all-dependencies --profile'
+  typo3:local:fetchDatabase:
+    - desc: 'Update local database. TYPO3 DB compare'
+    - run_locally: 'vendor/bin/typo3cms database:updateschema "*.add,*.change"'
+  typo3:local:flushCache:
+    - desc: 'Flush local cache'
+    - run_locally: 'vendor/bin/typo3cms cache:flush'

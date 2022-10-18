@@ -1,0 +1,13 @@
+.base: &base
+  hostname: sfroemken.de
+  typo3_webroot: public
+
+hosts:
+  prod:
+    <<: *base
+    deploy_path: '~/httpdocs/typo3lexikon.de'
+    branch: master
+  dev:
+    <<: *base
+    deploy_path: '~/httpdocs/typo3lexikon.sfroemken.de'
+    branch: dev

@@ -3,15 +3,12 @@ namespace Deployer;
 
 require 'recipe/typo3.php';
 
-// DocumentRoot / WebRoot for the TYPO3 installation
-set('typo3_webroot', 'public');
+// Import hosts
+import('Build/Deployer/hosts.yaml');
+localhost('ci');
+
 // Remove php bin path. PHP version will be set through .php-version file on remote server
 set('bin/php', '');
-
-// Hosts
-host('sfroemken.de')
-    ->set('remote_user', 'froemken')
-    ->set('deploy_path', '~/httpdocs/typo3lexikon.sfroemken.de');
 
 // Config
 set('repository', 'https://github.com/froemken/typo3lexikon');
@@ -32,16 +29,5 @@ task('deploy:postProcess', function () {
 after('deploy', 'deploy:postProcess');
 after('deploy:failed', 'deploy:unlock');
 
-// Local tasks
-desc('Update local typo3 via composer update');
-task('updateLocalTypo3', function () {
-    runLocally('composer update typo3/cms-* --with-all-dependencies --profile');
-});
-desc('Update local database. TYPO3 DB compare');
-task('updateLocalDatabase', function () {
-    runLocally('vendor/bin/typo3cms database:updateschema "*.add,*.change"');
-});
-desc('Flush local cache');
-task('flushLocalCache', function () {
-    runLocally('vendor/bin/typo3cms cache:flush');
-});
+// Add local DEP commands
+import('Build/Deployer/local_commands.yaml');
