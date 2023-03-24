@@ -20,11 +20,6 @@ page.10 = FLUIDTEMPLATE
 page.10 {
   file = EXT:typo3lexikon/Resources/Private/Templates/Typo3lexikon/Index.html
   partialRootPath = EXT:typo3lexikon/Resources/Private/Partials/
-  variables {
-    searchPage = TEXT
-    searchPage.typolink.parameter = 277
-    searchPage.typolink.returnLast = url
-  }
 }
 
 #############################

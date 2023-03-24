@@ -1,0 +1,2 @@
+plugin.tx_indexedsearch.view.partialRootPath = EXT:typo3lexikon/Resources/Private/IndexedSearch/Partials
+plugin.tx_indexedsearch.view.templateRootPath = EXT:typo3lexikon/Resources/Private/IndexedSearch/Templates

@@ -1,0 +1,14 @@
+<html lang="en"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">{row.title -> f:format.raw()}</h3>
+    </div>
+
+    <div class="panel-body">
+        {row.description -> f:format.raw()}
+    </div>
+</div>
+</html>

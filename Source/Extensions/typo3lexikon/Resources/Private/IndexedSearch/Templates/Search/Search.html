@@ -1,0 +1,40 @@
+<html lang="en"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:is="http://typo3.org/ns/TYPO3/CMS/IndexedSearch/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:alias map="{sword: searchParams.sword}">
+    <f:render partial="Form" arguments="{_all}"/>
+</f:alias>
+
+<f:for each="{resultsets}" as="result">
+    <f:if condition="{result.count} > 0">
+        <f:then>
+            <div class="tx-indexedsearch-browsebox">
+                <p>
+                    <is:pageBrowsingResults numberOfResults="{result.count}"
+                                            currentPage="{searchParams.pointer}"
+                                            resultsPerPage="{searchParams.numberOfResults}"/>
+                    {result.sectionText}
+                </p>
+                <is:pageBrowsing maximumNumberOfResultPages="{settings.page_links}"
+                                 numberOfResults="{result.count}"
+                                 currentPage="{searchParams.pointer}"
+                                 resultsPerPage="{searchParams.numberOfResults}"/>
+            </div>
+            <f:for each="{result.rows}" as="row">
+                <f:render partial="Searchresult" arguments="{row: row}"/>
+            </f:for>
+            <div class="tx-indexedsearch-browsebox">
+                <is:pageBrowsing numberOfResults="{result.count}" maximumNumberOfResultPages="{settings.page_links}"
+                                 currentPage="{searchParams.pointer}" resultsPerPage="{searchParams.numberOfResults}"/>
+            </div>
+        </f:then>
+        <f:else>
+            <div class="tx-indexedsearch-info-noresult">
+                <f:translate key="result.noResult"/>
+            </div>
+        </f:else>
+    </f:if>
+</f:for>
+</html>

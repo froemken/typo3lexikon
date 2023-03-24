@@ -1,12 +1,16 @@
-<f:layout name="Default" />
+<f:layout name="Default"/>
 
 <f:section name="main">
-	<f:if condition="{0: postProcessorContent}=={0: 'success'}">
-		<f:then>
-			<div class="alert alert-success" role="alert"><f:translate key="tx_form_view_mail.success" /></div>
-		</f:then>
-		<f:else>
-			<div class="alert alert-danger" role="alert"><f:translate key="tx_form_view_mail.error" /></div>
-		</f:else>
-	</f:if>
+    <f:if condition="{0: postProcessorContent}=={0: 'success'}">
+        <f:then>
+            <div class="alert alert-success" role="alert">
+                <f:translate key="tx_form_view_mail.success"/>
+            </div>
+        </f:then>
+        <f:else>
+            <div class="alert alert-danger" role="alert">
+                <f:translate key="tx_form_view_mail.error"/>
+            </div>
+        </f:else>
+    </f:if>
 </f:section>

@@ -1,11 +1,10 @@
-<INCLUDE_TYPOSCRIPT: source="FILE:./Setup/config.typoscript">
-<INCLUDE_TYPOSCRIPT: source="FILE:./Library/breadcrumb.typoscript">
-<INCLUDE_TYPOSCRIPT: source="FILE:./Library/leftNavigation.typoscript">
-<INCLUDE_TYPOSCRIPT: source="FILE:./Library/mainNavigation.typoscript">
-<INCLUDE_TYPOSCRIPT: source="FILE:./Library/searchWord.typoscript">
-<INCLUDE_TYPOSCRIPT: source="FILE:./Setup/page.typoscript">
-<INCLUDE_TYPOSCRIPT: source="FILE:./Setup/page.meta.typoscript">
-<INCLUDE_TYPOSCRIPT: source="FILE:./Setup/solr.typoscript">
+@import 'EXT:typo3lexikon/Configuration/TypoScript/Setup/config.typoscript'
+@import 'EXT:typo3lexikon/Configuration/TypoScript/Library/breadcrumb.typoscript'
+@import 'EXT:typo3lexikon/Configuration/TypoScript/Library/leftNavigation.typoscript'
+@import 'EXT:typo3lexikon/Configuration/TypoScript/Library/mainNavigation.typoscript'
+@import 'EXT:typo3lexikon/Configuration/TypoScript/Library/searchWord.typoscript'
+@import 'EXT:typo3lexikon/Configuration/TypoScript/Setup/page.typoscript'
+@import 'EXT:typo3lexikon/Configuration/TypoScript/Setup/page.meta.typoscript'
 
 lib.content < styles.content.get
 
