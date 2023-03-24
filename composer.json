@@ -33,7 +33,8 @@
 		"typo3/cms-scheduler": "^11.5",
 		"stefanfroemken/typo3lexikon": "dev-main",
 		"typo3/cms-adminpanel": "^11.5",
-		"typo3/cms-indexed-search": "^11.5"
+		"typo3/cms-indexed-search": "^11.5",
+		"stefanfroemken/mysqlreport": "^3.0"
 	},
 	"require-dev": {
 		"roave/security-advisories": "dev-latest",
