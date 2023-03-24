@@ -31,9 +31,9 @@
 		"typo3/cms-viewpage": "^11.5",
 		"typo3/cms-dashboard": "^11.5",
 		"typo3/cms-scheduler": "^11.5",
-		"apache-solr-for-typo3/solr": "^11.5",
 		"stefanfroemken/typo3lexikon": "dev-main",
-		"typo3/cms-adminpanel": "^11.5"
+		"typo3/cms-adminpanel": "^11.5",
+		"typo3/cms-indexed-search": "^11.5"
 	},
 	"require-dev": {
 		"roave/security-advisories": "dev-latest",
