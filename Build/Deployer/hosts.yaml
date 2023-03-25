@@ -6,6 +6,7 @@ hosts:
   prod:
     <<: *base
     deploy_path: '~/hosting185384.ae846.netcup.net/httpdocs'
+    http_user: hosting185384
     branch: master
   dev:
     <<: *base
