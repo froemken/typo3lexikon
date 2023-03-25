@@ -5,7 +5,7 @@ hosts:
   prod:
     <<: *base
     hostname: web295.dogado.net
-    deploy_path: '~/sfroemken'
+    deploy_path: '~/sfroemkende'
     http_user: h570653
     writable_mode: chmod
     branch: master
