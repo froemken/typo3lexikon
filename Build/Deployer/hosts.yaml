@@ -6,6 +6,7 @@ hosts:
     <<: *base
     hostname: web295.dogado.net
     deploy_path: '~/sfroemken'
+    http_user: h570653
     branch: master
 #  prod:
 #    <<: *base
