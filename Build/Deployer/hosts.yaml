@@ -1,14 +1,19 @@
 .base: &base
-  hostname: hosting185384.ae846.netcup.net
   typo3_webroot: public
 
 hosts:
   prod:
     <<: *base
-    deploy_path: '~/hosting185384.ae846.netcup.net/httpdocs'
-    http_user: hosting185384
-    writable_mode: chmod
+    hostname: web295.dogado.net
+    deploy_path: '~/sfroemken'
     branch: master
+#  prod:
+#    <<: *base
+#    hostname: hosting185384.ae846.netcup.net
+#    deploy_path: '~/hosting185384.ae846.netcup.net/httpdocs'
+#    http_user: hosting185384
+#    writable_mode: chmod
+#    branch: master
   dev:
     <<: *base
     deploy_path: '~/httpdocs/typo3lexikon.sfroemken.de'
