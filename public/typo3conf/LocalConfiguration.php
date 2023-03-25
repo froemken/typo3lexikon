@@ -76,6 +76,12 @@ return [
             'useMysqlFulltext' => '0',
             'xlhtml' => '/usr/bin/',
         ],
+        'mysqlreport' => [
+            'addExplain' => '0',
+            'profileBackend' => '0',
+            'profileFrontend' => '0',
+            'slowQueryTime' => '10.0',
+        ],
         'scheduler' => [
             'maxLifetime' => '1440',
             'showSampleTasks' => '1',
