@@ -1,11 +1,11 @@
 .base: &base
-  hostname: sfroemken.de
+  hostname: hosting185384.ae846.netcup.net
   typo3_webroot: public
 
 hosts:
   prod:
     <<: *base
-    deploy_path: '~/httpdocs/typo3lexikon.de'
+    deploy_path: '~/hosting185384.ae846.netcup.net/httpdocs'
     branch: master
   dev:
     <<: *base
