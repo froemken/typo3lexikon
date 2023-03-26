@@ -4,11 +4,17 @@
 hosts:
   prod:
     <<: *base
-    hostname: web295.dogado.net
-    deploy_path: '~/sfroemkende'
-    http_user: h570653
-    writable_mode: chmod
+    hostname: s236.goserver.host
+    deploy_path: '~/www/web298.s236.goserver.host'
+    http_user: web298
     branch: master
+#  prod:
+#    <<: *base
+#    hostname: web295.dogado.net
+#    deploy_path: '~/sfroemkende'
+#    http_user: h570653
+#    writable_mode: chmod
+#    branch: master
 #  prod:
 #    <<: *base
 #    hostname: hosting185384.ae846.netcup.net
