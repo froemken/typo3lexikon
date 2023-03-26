@@ -30,7 +30,7 @@ jobs:
       - name: Setup PHP ${{ matrix.php }}, with composer and extensions
         uses: shivammathur/setup-php@v2
         with:
-          php-version: 7.4
+          php-version: 8.1
           extensions: mbstring, dom, zip
 
       - name: Validate composer.json and composer.lock
@@ -47,9 +47,9 @@ jobs:
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.json') }}
           restore-keys: ${{ runner.os }}-composer-
 
-      - name: Install dependencies with typo3/cms-core:^10.4
+      - name: Install project dependencies
         run: |
-          composer install --verbose --prefer-dist --no-progress --no-interaction
+          composer install --verbose --prefer-dist --no-progress --no-interaction --no-dev
 
       # Deactivated, as long as there are no PHP files in typo3lexikon extension
       #- name: php-cs-fixer
