@@ -2428,10 +2428,10 @@
             "dist": {
                 "type": "path",
                 "url": "./Source/Extensions/typo3lexikon",
-                "reference": "be3e11f5e016114d9185e8dc5d0d05f1b671f65e"
+                "reference": "997a8223b0927bf8be2e7b85a0730d1ff0b3f773"
             },
             "require": {
-                "typo3/cms-core": "^11.5.16"
+                "typo3/cms-core": "^11.5.23"
             },
             "require-dev": {
                 "roave/security-advisories": "dev-latest"
