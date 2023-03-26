@@ -24,9 +24,9 @@ task('deploy:postProcess', function () {
     );
     // runLocally('scp public/typo3conf/AdditionalConfiguration.php ' . get('hostname') . ':' . get('release_path') . '/public/typo3conf/AdditionalConfiguration.php');
 
-    run('cd ' . get('release_path') . ' && vendor/bin/typo3cms database:updateschema "*.add,*.change"');
-    run('cd ' . get('release_path') . ' && vendor/bin/typo3cms language:update');
-    run('cd ' . get('release_path') . ' && vendor/bin/typo3cms cache:flush');
+    run('cd ' . get('release_path') . ' && ' . get('bin/php') . ' vendor/bin/typo3cms database:updateschema "*.add,*.change"');
+    run('cd ' . get('release_path') . ' && ' . get('bin/php') . ' vendor/bin/typo3cms language:update');
+    run('cd ' . get('release_path') . ' && ' . get('bin/php') . ' vendor/bin/typo3cms cache:flush');
 });
 after('deploy', 'deploy:postProcess');
 after('deploy:failed', 'deploy:unlock');
