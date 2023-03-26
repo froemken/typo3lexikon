@@ -8,7 +8,7 @@ import('Build/Deployer/hosts.yaml');
 localhost('ci');
 
 // Remove php bin path. PHP version will be set through .php-version file on remote server
-set('bin/php', '/usr/bin/php8.0-cli');
+set('bin/php', '/usr/bin/php8.1-cli');
 
 // Config
 set('repository', 'https://github.com/froemken/typo3lexikon');
