@@ -62,12 +62,6 @@
 	"scripts":{
 		"ci:php:lint": "find *.php Source/Extensions/typo3lexikon/Classes Source/Extensions/typo3lexikon/Configuration -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l",
 		"ci:php:fixer": "vendor/bin/php-cs-fixer --config=Build/.php_cs.php fix --dry-run -v --show-progress=dots --diff Source/Extensions/typo3lexikon/Classes",
-		"php:fix": "vendor/bin/php-cs-fixer --config=Build/.php_cs.php fix Source/Extensions/typo3lexikon/Classes",
-		"typo3-cms-scripts": [
-			"typo3cms install:fixfolderstructure"
-		],
-		"post-autoload-dump": [
-			"@typo3-cms-scripts"
-		]
+		"php:fix": "vendor/bin/php-cs-fixer --config=Build/.php_cs.php fix Source/Extensions/typo3lexikon/Classes"
 	}
 }
