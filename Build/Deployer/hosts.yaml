@@ -8,27 +8,27 @@ hosts:
     deploy_path: '~/s956479833.online.de'
     http_user: u111705956
     writable_mode: chown
-    branch: master
+    branch: main
 #  prod:
 #    <<: *base
 #    hostname: s236.goserver.host
 #    deploy_path: '~/www/web298.s236.goserver.host'
 #    http_user: web298
-#    branch: master
+#    branch: main
 #  prod:
 #    <<: *base
 #    hostname: web295.dogado.net
 #    deploy_path: '~/sfroemkende'
 #    http_user: h570653
 #    writable_mode: chmod
-#    branch: master
+#    branch: main
 #  prod:
 #    <<: *base
 #    hostname: hosting185384.ae846.netcup.net
 #    deploy_path: '~/hosting185384.ae846.netcup.net/httpdocs'
 #    http_user: hosting185384
 #    writable_mode: chmod
-#    branch: master
+#    branch: main
   dev:
     <<: *base
     deploy_path: '~/httpdocs/typo3lexikon.sfroemken.de'

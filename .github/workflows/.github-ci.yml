@@ -3,7 +3,7 @@ name: Deploy typo3lexikon.de
 on:
   push:
     branches:
-      - master
+      - main
       - dev
 
 concurrency: production_environment
@@ -61,7 +61,7 @@ jobs:
       #  run: composer ci:php:lint
 
       - name: Deploy LIVE
-        if: ${{ github.ref_name == 'master' }}
+        if: ${{ github.ref_name == 'main' }}
         uses: deployphp/action@v1
         with:
           private-key: ${{ secrets.SSH_PRIVATE_KEY }}
