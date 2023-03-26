@@ -4,10 +4,16 @@
 hosts:
   prod:
     <<: *base
-    hostname: s236.goserver.host
-    deploy_path: '~/www/web298.s236.goserver.host'
-    http_user: web298
+    hostname: access956479836.webspace-data.io
+    deploy_path: '~/s956479833.online.de'
+    http_user: u111705956
     branch: master
+#  prod:
+#    <<: *base
+#    hostname: s236.goserver.host
+#    deploy_path: '~/www/web298.s236.goserver.host'
+#    http_user: web298
+#    branch: master
 #  prod:
 #    <<: *base
 #    hostname: web295.dogado.net
