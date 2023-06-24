@@ -14,6 +14,7 @@ set('bin/php', '/usr/bin/php82');
 set('http_user', function () {
     return run('whoami');
 });
+
 // Config
 set('repository', 'https://github.com/froemken/typo3lexikon');
 set('shared_files', []);
