@@ -10,11 +10,13 @@ localhost('ci');
 // Remove php bin path. PHP version will be set through .php-version file on remote server
 set('bin/php', '/usr/bin/php82');
 
+// Do not search for www, apache or whatever user. Just use whoami on DF servers
+set('http_user', function () {
+    return run('whoami');
+});
 // Config
 set('repository', 'https://github.com/froemken/typo3lexikon');
 set('shared_files', []);
-add('shared_dirs', []);
-add('writable_dirs', []);
 
 // Remote tasks
 task('deploy:postProcess', function () {
