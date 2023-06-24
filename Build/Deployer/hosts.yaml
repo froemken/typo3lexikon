@@ -4,6 +4,6 @@
 hosts:
   prod:
     <<: *base
-    hostname: typo3lexikon.de
+    hostname: jweiland65.net
     deploy_path: '~/typo3cms/typo3lexikon'
     branch: main
